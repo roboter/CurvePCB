@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurvePCB"
         mc:Ignorable="d"
+        MouseWheel="canvas_MouseWheel"
         Title="MainWindow" Height="450" Width="800">
-    <Canvas x:Name="canvas"  MouseDown="canvas_MouseDown" MouseUp="canvas_MouseUp" MouseLeave="canvas_MouseLeave" MouseMove="canvas_MouseMove" Background="#FF80947F"/>
+    <Canvas x:Name="canvas"  MouseDown="canvas_MouseDown" MouseUp="canvas_MouseUp" MouseLeave="canvas_MouseLeave" MouseMove="canvas_MouseMove" Background="#FF80947F" />
 </Window>

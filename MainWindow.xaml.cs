@@ -38,21 +38,88 @@ namespace CurvePCB
         public bool Contains(Point p) => (p.X > X && p.X < X + Width && p.Y > Y && p.Y < Y + Height);
     }
 
-    public class QFN
+    public class Pins : IElement
     {
-        private const double width = 3.25; // 0.010 in
-        private const double height = 0.3;
-        private const double start = 2.125;
-        private const double next = 0.500;
-        private const int pinsOnSide = 12;
+        private bool selected = false;
+        Dimention dimention;
+        private Canvas canvas;
+        private const int pinsOnSide = 16;
+        private Point pos;
+        private List<Shape> rectangles = new List<Shape>();
+        private const double width = 1; // mm
+        private const double height = 1; // mm
+        private const double next = 2.54; // mm
+
+        public Pins(Canvas canvas)
+        {
+           
+            this.canvas = canvas;
+        }
+
+        public void Clicked(Point brushPosition)
+        {
+            if (selected)
+            {
+                selected = false;
+                return;
+            }
+
+            if (dimention.Contains(brushPosition))
+            {
+                selected = true;
+            }
+        }
+
+        public Point[] Draw(Point offset)
+        {
+            pos = offset;
+            dimention = new Dimention(pos.X, pos.Y, 12, 12);
+            var points = new List<Point>();
+
+            for (int i = 0; i != pinsOnSide; i++)
+            {
+                var rectangle1 = new Rectangle { RadiusX = 5, Width = width, Height = height };
+                Canvas.SetLeft(rectangle1, offset.X -width/2);
+                points.Add(new Point(offset.Y, offset.X));
+                Canvas.SetTop(rectangle1, offset.Y + i * (next) - width / 2);
+                rectangle1.Fill = Brushes.Fuchsia;
+                rectangle1.Stroke = Brushes.Black;
+                canvas.Children.Add(rectangle1);
+                rectangles.Add(rectangle1);
+            }
+            return points.ToArray();
+        }
+
+        public void Move(Point point)
+        {
+
+        }
+    }
+
+    public interface IElement
+    {
+        void Move(Point point);
+        void Clicked(Point position);
+        Point[] Draw(Point point);
+    }
+
+    public class Element : IElement
+    {
+        const double IN = 2.54;
+        private const double width = 1.2; // mm
+        private const double height = 0.3; // mm
+        private const double start = (10 - (7.5)) / 2 + 1 - 0.3 / 2;
+        private const double next = 0.500; // mm
+        private const int pinsOnSide = 16;
         private List<Rectangle> rectangles = new List<Rectangle>();
         private Point pos;
         private bool selected = false;
         Dimention dimention;
         private Rectangle border;
+        private Rectangle body;
 
         public Canvas canvas { get; set; }
-        public QFN(Canvas canvas)
+        public Element(Canvas canvas)
         {
             this.canvas = canvas;
         }
@@ -60,33 +127,94 @@ namespace CurvePCB
         public Point[] Draw(Point offset)
         {
             pos = offset;
-            dimention = new Dimention(pos.X, pos.Y, 10 * 10, 10 * 10);
+            dimention = new Dimention(pos.X, pos.Y, 12, 12);
             var points = new List<Point>();
             for (int i = 0; i != pinsOnSide; i++)
             {
-                var rectangle = new Rectangle { RadiusX = 5, Width = width * 10, Height = height * 10 };
-                Canvas.SetLeft(rectangle, offset.X);
+                var rectangle1 = new Rectangle { RadiusX = 5, Width = width, Height = height };
+                Canvas.SetLeft(rectangle1, offset.X);
                 points.Add(new Point(offset.Y, offset.X));
-                Canvas.SetTop(rectangle, offset.Y + i * 10);
-                rectangle.Fill = Brushes.Fuchsia;
-                canvas.Children.Add(rectangle);
-                rectangles.Add(rectangle);
+                Canvas.SetTop(rectangle1, offset.Y + i * (next) + start);
+                rectangle1.Fill = Brushes.Fuchsia;
+                rectangle1.Stroke = Brushes.Black;
+                canvas.Children.Add(rectangle1);
+                rectangles.Add(rectangle1);
+
+                var rectangle2 = new Rectangle { RadiusX = 5, Width = width, Height = height };
+                Canvas.SetLeft(rectangle2, offset.X + 10 + 0.8);
+                points.Add(new Point(offset.Y, offset.X));
+                Canvas.SetTop(rectangle2, offset.Y + i * (next) + start);
+                rectangle2.Fill = Brushes.Fuchsia;
+                rectangle2.Stroke = Brushes.Black;
+                canvas.Children.Add(rectangle2);
+                rectangles.Add(rectangle2);
+
+                var rectangle3 = new Rectangle { RadiusX = 5, Width = height, Height = width };
+                Canvas.SetLeft(rectangle3, offset.X + i * (next) + start);
+                points.Add(new Point(offset.Y, offset.X));
+                Canvas.SetTop(rectangle3, offset.Y + 10 + 0.8);
+                rectangle3.Fill = Brushes.Fuchsia;
+                rectangle3.Stroke = Brushes.Black;
+                canvas.Children.Add(rectangle3);
+                rectangles.Add(rectangle3);
+
+                var rectangle4 = new Rectangle { RadiusX = 5, Width = height, Height = width };
+                Canvas.SetLeft(rectangle4, offset.X + i * (next) + start);
+                points.Add(new Point(offset.Y, offset.X));
+                Canvas.SetTop(rectangle4, offset.Y);
+                rectangle4.Fill = Brushes.Fuchsia;
+                rectangle4.Stroke = Brushes.Black;
+                canvas.Children.Add(rectangle4);
+                rectangles.Add(rectangle4);
             }
 
-
-            border = new Rectangle { RadiusX = 5, Width = 10 * 10, Height = 10 * 10 };
+            #region border
+            border = new Rectangle { RadiusX = 0.5, Width = 12, Height = 12 }; //mm
             border.ForceCursor = true;
             border.Cursor = Cursors.Hand;
             border.IsMouseDirectlyOverChanged += Border_IsMouseDirectlyOverChanged;
             border.Stroke = Brushes.Pink;
-            border.StrokeThickness = 4;
+            border.StrokeThickness = 0.1;
             border.StrokeDashArray = DoubleCollection.Parse("4 4");
             Canvas.SetLeft(border, offset.X);
 
             Canvas.SetTop(border, offset.Y);
 
-
             canvas.Children.Add(border);
+            #endregion
+
+            #region body
+            body = new Rectangle { RadiusX = 2, Width = 10, Height = 10 }; // mm
+            body.ForceCursor = true;
+            body.Cursor = Cursors.Hand;
+            body.IsMouseDirectlyOverChanged += Border_IsMouseDirectlyOverChanged;
+            body.Stroke = Brushes.IndianRed;
+            body.StrokeThickness = 0.2;
+            body.Opacity = 0.5;
+            //     body.StrokeDashArray = DoubleCollection.Parse("4 4");
+            Canvas.SetLeft(body, offset.X + 1);
+
+            Canvas.SetTop(body, offset.Y + 1);
+
+            canvas.Children.Add(body);
+            #endregion
+
+
+            #region pins
+            var pins = new Rectangle { RadiusX = 2, Width = 7.5, Height = 7.5 }; // mm
+            pins.ForceCursor = true;
+            pins.Cursor = Cursors.Hand;
+            pins.IsMouseDirectlyOverChanged += Border_IsMouseDirectlyOverChanged;
+            pins.Stroke = Brushes.IndianRed;
+            pins.StrokeThickness = 0.01;
+            pins.Opacity = 0.5;
+            //     body.StrokeDashArray = DoubleCollection.Parse("4 4");
+            Canvas.SetLeft(pins, offset.X + (10 - 7.5) / 2 + 1);
+
+            Canvas.SetTop(pins, offset.Y + (10 - 7.5) / 2 + 1);
+
+            canvas.Children.Add(pins);
+            #endregion
             return points.ToArray();
         }
 
@@ -99,7 +227,7 @@ namespace CurvePCB
             Debug.WriteLine(e.NewValue is bool ? (bool)e.NewValue : null);
         }
 
-        internal void Move(Point brushPosition)
+        public void Move(Point brushPosition)
         {
             if (selected)
             {
@@ -114,7 +242,7 @@ namespace CurvePCB
                 foreach (var rectangle in rectangles)
                 {
                     Canvas.SetLeft(rectangle, brushPosition.X);
-                    Canvas.SetTop(rectangle, brushPosition.Y + i * 10);
+                    Canvas.SetTop(rectangle, brushPosition.Y + i * next + start);
                     i++;
                 }
             }
@@ -137,7 +265,7 @@ namespace CurvePCB
             }
         }
 
-        internal void Clicked(Point brushPosition)
+        public void Clicked(Point brushPosition)
         {
             if (selected)
             {
@@ -152,11 +280,6 @@ namespace CurvePCB
         }
     }
 
-    public class DragabblePoint
-    {
-        public Point Point { get; set; }
-    }
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -165,20 +288,25 @@ namespace CurvePCB
         Point currentPoint = new Point();
         private bool IsMouseDown = false;
         private int childcounter = 0;
-        private double zoom = 1;
-        private List<Point> curvePoints = new List<Point>();
-        private List<QFN> qfns = new List<QFN>();
+        private double zoom = 10;
+        private List<Point> curvePoints = new();
+        private List<IElement> elements = new();
+        private List<Rectangle> drPoints = new();
+
         Point[] points1 =
           {
                 new Point(60, 30),
                 new Point(200, 130),
                 new Point(100, 150),
                 new Point(200, 50),
+              //    new Point(20, 20),
             };
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
         Path path;
+        Line line1;
+        Line line2;
 
 
         public MainWindow()
@@ -189,17 +317,23 @@ namespace CurvePCB
 
             var offset = new Point(25, 25);
 
-            var qfn48 = new QFN(canvas);
-            qfns.Add(qfn48);
-            var qfnPoints = qfn48.Draw(new Point(100, 200));
+            //var qfn48 = ;
+            elements = new List<IElement> { new Element(canvas), new Pins(canvas) };
+            //var qfnPoints = ((IElement)qfn48).Draw(new Point(3, 3));
 
-            var curves = new List<Tuple<Point, Point>>();
-            for (int i = 0; i != 1; i++)
+            foreach (IElement el in elements)
             {
-                var p = new Point { X = i * 2.45 * 10 + offset.X, Y = 0 + offset.Y };
-                //   addPoint(p, 10, new SolidColorBrush(Colors.GreenYellow));
-                curves.Add(new Tuple<Point, Point>(qfnPoints[i], new Point { X = 0 + offset.Y, Y = i * 2.45 * 10 + offset.X }));
+                el.Draw(new Point(IN, IN));
             }
+
+
+            //var curves = new List<Tuple<Point, Point>>();
+            //for (int i = 0; i != 1; i++)
+            //{
+            //    var p = new Point { X = i * 2.54  + offset.X, Y = 0 + offset.Y };
+            //    //   addPoint(p, 10, new SolidColorBrush(Colors.GreenYellow));
+            //    curves.Add(new Tuple<Point, Point>(qfnPoints[i], new Point { X = 0 + offset.Y, Y = i * 2.54 + offset.X }));
+            //}
 
             foreach (Point point in points1)
             {
@@ -216,21 +350,27 @@ namespace CurvePCB
                 rect.MouseMove += Rect_MouseMove;
                 rect.DragEnter += Rect_DragEnter;
                 rect.MouseLeftButtonUp += Rect_MouseLeftButtonUp;
-                //rect.Name = $"Point{point.X}_{point.Y}";
+                drPoints.Add(rect);
             }
-
+            line1 = new Line { X1 = points1[0].X, X2 = points1[1].X, Y1 = points1[0].Y, Y2 = points1[1].Y };
+            line1.Stroke = Brushes.Black;
+            line1.StrokeThickness = 0.1;
+            line1.StrokeDashArray = DoubleCollection.Parse("40 40");
+            line2 = new Line { X1 = points1[2].X, X2 = points1[3].X, Y1 = points1[2].Y, Y2 = points1[3].Y };
+            line2.Stroke = Brushes.Black;
+            line2.StrokeDashArray = DoubleCollection.Parse("4 4");
+            line2.StrokeThickness = 0.5;
+            canvas.Children.Add(line1);
+            canvas.Children.Add(line2);
 
             PathSegmentCollection path_segment_collection = new();
             // Create a Path to hold the geometry.
             path = new()
             {
-
                 // Add a PathGeometry.
                 Data = new PathGeometry
                 {
-                    Figures = { new PathFigure {
-                    Segments = path_segment_collection,
-            StartPoint = points1[0] } }
+                    Figures = { new PathFigure { Segments = path_segment_collection, StartPoint = points1[0] } }
                 }
             };
 
@@ -246,10 +386,13 @@ namespace CurvePCB
             // Add the PolyBezierSegment to othe segment collection.
             path_segment_collection.Add(bezier_segment);
 
-
             path.Stroke = Brushes.LightGreen;
-            path.StrokeThickness = 5;
+            path.StrokeThickness = 1;
             canvas.Children.Add(path);
+
+            ScaleTransform zoomTransform = new();
+            zoomTransform.ScaleX = zoomTransform.ScaleY = zoom;
+            canvas.RenderTransform = zoomTransform;
         }
 
         private void Rect_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -275,18 +418,23 @@ namespace CurvePCB
                 if (pathFigure is not null)
                 {
                     var segment = (PolyBezierSegment)pathFigure.Segments.FirstOrDefault();
-                    var point = points1[1];
-                    //point = new Point(x, y);
-                    point.X = x;
-                    point.Y = y;
 
-                    Point[] newPointCollection =
-                    {
-                        new Point(),
-                        point,
-                        point,
-                        points1[3]
-                    };
+                    Point[] newPointCollection = drPoints.Select(dp => new Point { X = Canvas.GetLeft(dp), Y = Canvas.GetTop(dp) }).ToArray();
+
+                    pathFigure.StartPoint = newPointCollection[0];
+
+                    line1.X1 = newPointCollection[0].X;
+                    line1.X2 = newPointCollection[1].X;
+
+                    line1.Y1 = newPointCollection[0].Y;
+                    line1.Y2 = newPointCollection[1].Y;
+
+                    line2.X1 = newPointCollection[2].X;
+                    line2.X2 = newPointCollection[3].X;
+
+                    line2.Y1 = newPointCollection[2].Y;
+                    line2.Y2 = newPointCollection[3].Y;
+
                     PointCollection point_collection = new(newPointCollection.Length - 1);
                     for (int i = 1; i < newPointCollection.Length; i++)
                         point_collection.Add(newPointCollection[i]);
@@ -294,7 +442,6 @@ namespace CurvePCB
                 }
             }
         }
-
 
         private void Rect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -319,25 +466,26 @@ namespace CurvePCB
             document.Write("test1.svg");
         }
 
-        const double IN = 2.45 * 5;
+        const double IN = 2.54;
         private void DrawGrid()
         {
             var brush = new SolidColorBrush(Colors.DarkRed)
             {
-                Opacity = 0.5
+                Opacity = 0.5,
             };
 
-            for (double i = 0; i < (int)Height; i += IN)
+            for (double i = 0; i < 100; i += IN )
             {
-                for (double j = 0; j < (int)Width; j += IN)
+                for (double j = 0; j < 100; j += IN )
                 {
-                    addPoint(new Point { X = i, Y = j }, 2, brush);
+                    addPoint(new Point { X = i, Y = j }, 0.25, brush);
                 }
             }
         }
 
-        private void addPoint(Point p, int w, Brush brush)
+        private void addPoint(Point p, double w, Brush brush)
         {
+
             var elipse = new Ellipse
             {
                 Width = w,
@@ -352,30 +500,12 @@ namespace CurvePCB
 
         private void canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            Ellipse mybrush = new Ellipse();
-            //   label1.Content = "X,Y:"+e.GetPosition(canvas1).X.ToString() + “,” +e.GetPosition(canvas1).Y.ToString();
-            mybrush.Width = 10;
-            mybrush.Height = 10;
-            Point brushPosition = new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y);
-            if (IsMouseDown)
+            if (!IsMouseDown)
             {
-
-                //  if (erasorON.IsChecked == true)
-                mybrush.Fill = new SolidColorBrush(Colors.Bisque);
-                //else
-                //    mybrush.Fill = new SolidColorBrush(Color.FromArgb(Convert.ToByte(sliderOp.Value), Convert.ToByte(sliderRed.Value), Convert.ToByte(sliderGreen.Value), Convert.ToByte(sliderBlue.Value)));
-
-                Canvas.SetTop(mybrush, brushPosition.Y);
-                Canvas.SetLeft(mybrush, brushPosition.X);
-                //        canvas.Children.Add(mybrush);
-                childcounter++;
-            }
-            else
-            {
-                foreach (var element in qfns)
+                foreach (var element in elements)
                 {
                     {
-                        element.Move(brushPosition);
+                        element.Move(new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y));
                     }
                 }
             }
@@ -396,7 +526,7 @@ namespace CurvePCB
             Point brushPosition = new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y);
             IsMouseDown = true;
 
-            foreach (var element in qfns)
+            foreach (var element in elements)
             {
                 {
                     element.Clicked(brushPosition);
@@ -406,9 +536,7 @@ namespace CurvePCB
 
         private void canvas_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            // Debug.WriteLine(e.Delta);
             zoom = e.Delta > 0 ? zoom + 0.1 : zoom - 0.1;
-
             ScaleTransform zoomTransform = new();
             zoomTransform.ScaleX = zoomTransform.ScaleY = zoom;
             canvas.RenderTransform = zoomTransform;

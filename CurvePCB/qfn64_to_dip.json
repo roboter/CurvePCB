@@ -1,0 +1,1511 @@
+﻿{
+  "$id": "890f844f-20b9-4b93-be97-f283bb9b04ae",
+  "Name": "ConnectorsTest",
+  "Elements": {
+    "$id": "577ed40e-716c-4568-8408-70e5252fcfa5",
+    "$values": [
+      {
+        "$id": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78",
+        "Name": "U1",
+        "Shape": {
+          "$id": "0342fc89-5eae-496c-971b-5c651cbb9048",
+          "Name": "LQFP",
+          "Pins": 64
+        }
+      },
+      {
+        "$id": "4112d596-efa7-41c3-9e01-e5db9f1b5824",
+        "Name": "J1",
+        "Shape": {
+          "$id": "dffae0cf-3a58-41d4-9e0a-6235c396d642",
+          "Name": "Connector",
+          "Pins": 32
+        }
+      },
+      {
+        "$id": "38f607d1-b34c-4f18-920e-7f6fea591e89",
+        "Name": "J2",
+        "Shape": {
+          "$ref": "dffae0cf-3a58-41d4-9e0a-6235c396d642"
+        }
+      }
+    ]
+  },
+  "Nets": {
+    "$id": "58bbcaa1-8ae7-4e2c-b195-e638ad9c7084",
+    "$values": [
+      {
+        "$id": "b925f7d4-7e06-47ca-a4e7-1c083c2b5d77",
+        "Name": "U1_Pin1",
+        "Connection": {
+          "$id": "d352eedf-ae26-4881-b452-c4dd2ade3fb1",
+          "$values": [
+            {
+              "$id": "6cf1875f-b4b5-4025-9102-6909c4ee5035",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 1
+            },
+            {
+              "$id": "4039fce8-40eb-43e2-8d4f-4ef774f31b91",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "412fd115-4519-495e-ac18-ec7038c082c4",
+        "Name": "U1_Pin17",
+        "Connection": {
+          "$id": "7402898b-f78a-4bf1-82c2-9bcfd2a28630",
+          "$values": [
+            {
+              "$id": "7cec9436-4bbb-425e-8135-cfdcf97b3bb9",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 17
+            },
+            {
+              "$id": "50ffb631-a5a6-4653-8e73-a8147beca6a9",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 17
+            }
+          ]
+        }
+      },
+      {
+        "$id": "e72d2787-ad56-4cca-845d-c23e3be405bd",
+        "Name": "U1_Pin33",
+        "Connection": {
+          "$id": "661021b8-ce35-4261-852b-8c56dbd143b1",
+          "$values": [
+            {
+              "$id": "f43120aa-e8fe-46f2-8b88-bc030e04a9af",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 33
+            },
+            {
+              "$id": "38e18a6c-9933-47ed-88f6-333a49286318",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 1
+            }
+          ]
+        }
+      },
+      {
+        "$id": "56f62a4e-af0f-4e75-b810-29d92540379b",
+        "Name": "U1_Pin49",
+        "Connection": {
+          "$id": "fa10d824-502c-4340-9c8a-545af8157314",
+          "$values": [
+            {
+              "$id": "52094c33-c962-42e3-9eef-a2a6148ac87e",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 49
+            },
+            {
+              "$id": "9aba061f-2c40-4b29-a1b2-9fa1fe085810",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 17
+            }
+          ]
+        }
+      },
+      {
+        "$id": "9f92c381-cfc7-4b43-99f6-8ca2af724fd2",
+        "Name": "U1_Pin2",
+        "Connection": {
+          "$id": "d6c01a27-da73-4541-b57f-3b1286d10a58",
+          "$values": [
+            {
+              "$id": "c0a0be22-fb8f-44f8-a2be-ce464e01361a",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 2
+            },
+            {
+              "$id": "d85aa9c8-922a-4a30-af88-42e5f5156238",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 2
+            }
+          ]
+        }
+      },
+      {
+        "$id": "0dbe9ef3-2e5b-4a82-9e4a-db5d9639809f",
+        "Name": "U1_Pin18",
+        "Connection": {
+          "$id": "476ff484-9332-47ca-b9e3-abaed0d06cbd",
+          "$values": [
+            {
+              "$id": "dd0d3b79-0e2d-4aa6-ae6c-372ecf0ffaf3",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 18
+            },
+            {
+              "$id": "65507348-2647-44b1-a9e8-39359c698314",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 18
+            }
+          ]
+        }
+      },
+      {
+        "$id": "829ea50d-2273-41d6-8ea7-0c526861c54a",
+        "Name": "U1_Pin34",
+        "Connection": {
+          "$id": "6f799fa5-2bad-4a06-af1e-c25c6d4bd901",
+          "$values": [
+            {
+              "$id": "a363cf58-872d-40e3-9604-31341d3bebaf",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 34
+            },
+            {
+              "$id": "da25fefa-dac4-43dc-82e0-13b553eb2b2b",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 2
+            }
+          ]
+        }
+      },
+      {
+        "$id": "6eae08ed-caaa-449f-89b3-13be4ea5d294",
+        "Name": "U1_Pin50",
+        "Connection": {
+          "$id": "83d567f1-48c2-4155-9f8d-f6a463bb0a37",
+          "$values": [
+            {
+              "$id": "0d86a828-8b47-4aeb-95ad-31bfe35c3a43",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 50
+            },
+            {
+              "$id": "e7d7cf40-eccf-4e1c-8367-63653399a0b8",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 18
+            }
+          ]
+        }
+      },
+      {
+        "$id": "ac113c33-09d8-4818-aefd-17ce0442cc72",
+        "Name": "U1_Pin3",
+        "Connection": {
+          "$id": "cc52c5ee-990f-4ba8-a3dd-c1a32bdabaa3",
+          "$values": [
+            {
+              "$id": "41153bb7-6f9b-4869-9913-b18783919ff4",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 3
+            },
+            {
+              "$id": "5732870f-54f1-45ff-90b7-2fa9edf9585f",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 3
+            }
+          ]
+        }
+      },
+      {
+        "$id": "4882f7d8-5fdd-4922-a834-4117365b5f7a",
+        "Name": "U1_Pin19",
+        "Connection": {
+          "$id": "edbfcacf-3932-4e0e-9aa6-00530f5a199d",
+          "$values": [
+            {
+              "$id": "0cb3bdc2-736d-421b-ad63-51978043f55d",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 19
+            },
+            {
+              "$id": "5b5f5372-590a-4c6b-89e5-93f51fd55c30",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 19
+            }
+          ]
+        }
+      },
+      {
+        "$id": "78b045a6-271c-4b22-a570-94cd623cb635",
+        "Name": "U1_Pin35",
+        "Connection": {
+          "$id": "38ef5685-4726-4711-937c-4d396501e086",
+          "$values": [
+            {
+              "$id": "1c9b7b2c-40b0-49d9-b256-eedfc7dd6c80",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 35
+            },
+            {
+              "$id": "80dc8314-fcac-408f-af5e-c0728d3bd569",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 3
+            }
+          ]
+        }
+      },
+      {
+        "$id": "a423cde3-60c8-4856-b7a5-b62cd8e4c714",
+        "Name": "U1_Pin51",
+        "Connection": {
+          "$id": "c2210f06-352a-4baf-8186-b6d838960954",
+          "$values": [
+            {
+              "$id": "5d3b2ce3-08fe-40b1-9f0d-7360b4fe7829",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 51
+            },
+            {
+              "$id": "2c38a692-0936-4f34-82d1-f331bd9baf30",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 19
+            }
+          ]
+        }
+      },
+      {
+        "$id": "7629964c-909c-486a-9c4f-32eab61478a3",
+        "Name": "U1_Pin4",
+        "Connection": {
+          "$id": "4630d76f-d335-4ce9-9509-1d8cb09a56f1",
+          "$values": [
+            {
+              "$id": "419b718e-fcdf-49cc-9097-e38f76f59868",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 4
+            },
+            {
+              "$id": "9acfd84a-6ae1-4e31-bbab-617f4a2237ea",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 4
+            }
+          ]
+        }
+      },
+      {
+        "$id": "df47e970-1f1e-48bd-984b-c610a1a3ec6d",
+        "Name": "U1_Pin20",
+        "Connection": {
+          "$id": "94d23227-de36-426c-8f94-fa345b18cd10",
+          "$values": [
+            {
+              "$id": "4954ca1f-ebc6-4a9d-927f-482dd17ac3df",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 20
+            },
+            {
+              "$id": "dfcaf87d-b309-4c33-bb53-42ed958caa88",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 20
+            }
+          ]
+        }
+      },
+      {
+        "$id": "275b09b8-a065-4e67-ac51-5a6e8b06baa9",
+        "Name": "U1_Pin36",
+        "Connection": {
+          "$id": "900836f8-be6f-4302-a9eb-be90ebaf386f",
+          "$values": [
+            {
+              "$id": "4af6693f-524c-4c82-8db8-a86fce89f73c",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 36
+            },
+            {
+              "$id": "48e1fac8-54c9-4077-a268-cf951b8ee423",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 4
+            }
+          ]
+        }
+      },
+      {
+        "$id": "f2f63389-ce7f-4cfb-9faa-e583499e188c",
+        "Name": "U1_Pin52",
+        "Connection": {
+          "$id": "8ff41050-2c23-454b-a923-c48a45dd2c50",
+          "$values": [
+            {
+              "$id": "0c9eb801-dfaa-47f8-9973-5b6386abdeef",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 52
+            },
+            {
+              "$id": "be02b020-f672-4f9d-a53e-6a047b8c4ee6",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 20
+            }
+          ]
+        }
+      },
+      {
+        "$id": "d32bb350-c71c-491e-8576-3fa0a9eb3a02",
+        "Name": "U1_Pin5",
+        "Connection": {
+          "$id": "68cc9b07-03ab-4cbe-97eb-7769598ea505",
+          "$values": [
+            {
+              "$id": "31180486-fca1-4514-91f8-1d63e7915dc2",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 5
+            },
+            {
+              "$id": "01671fd7-99d7-45a4-9c65-0d229c678d85",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 5
+            }
+          ]
+        }
+      },
+      {
+        "$id": "3c10f019-2747-407c-8108-e0484ab9b308",
+        "Name": "U1_Pin21",
+        "Connection": {
+          "$id": "c4fd346a-035c-4ca1-9adb-6b34a59ae62f",
+          "$values": [
+            {
+              "$id": "b9747f90-bab2-4c5c-be41-aa4e5bb69677",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 21
+            },
+            {
+              "$id": "da27ece1-98df-46ee-bc3d-9692ea3b7369",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 21
+            }
+          ]
+        }
+      },
+      {
+        "$id": "a786c562-822c-4c42-aa68-744f8e05338b",
+        "Name": "U1_Pin37",
+        "Connection": {
+          "$id": "e8003969-ef5a-4404-af9d-383a73abe680",
+          "$values": [
+            {
+              "$id": "7bc039b9-1aaa-4804-9fcf-603622563fd6",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 37
+            },
+            {
+              "$id": "8bd4b502-6508-42e8-9658-b5e9ffe45970",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 5
+            }
+          ]
+        }
+      },
+      {
+        "$id": "0eb078db-22e6-419b-9a95-d861c1bdbc45",
+        "Name": "U1_Pin53",
+        "Connection": {
+          "$id": "aba7c509-c80e-40da-a19e-894977ef49bc",
+          "$values": [
+            {
+              "$id": "d7af3926-7236-4def-be8a-4d28a70932a1",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 53
+            },
+            {
+              "$id": "a7c3b770-a992-45df-a5f5-eb1f9de4551e",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 21
+            }
+          ]
+        }
+      },
+      {
+        "$id": "693ac40e-9f14-47b9-b7ba-fa37f581693d",
+        "Name": "U1_Pin6",
+        "Connection": {
+          "$id": "7e50c7fd-21e8-4e3c-b615-445c8ec7d420",
+          "$values": [
+            {
+              "$id": "3574b22b-5fc6-45cd-aa6a-700575264ca8",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 6
+            },
+            {
+              "$id": "9b1c01e5-46e1-40e5-8cad-907017e054da",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 6
+            }
+          ]
+        }
+      },
+      {
+        "$id": "c681f606-d93f-4d1c-bbbb-5ee211836ed5",
+        "Name": "U1_Pin22",
+        "Connection": {
+          "$id": "717bc9ee-1307-42c3-a948-f8d085d7f413",
+          "$values": [
+            {
+              "$id": "4ac750dd-ee7c-4723-a54a-7fbddd2597b2",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 22
+            },
+            {
+              "$id": "59afbf8a-19a2-4bec-afff-4c6ffa861bd5",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 22
+            }
+          ]
+        }
+      },
+      {
+        "$id": "7793a26c-f3fa-474b-a8d3-c9560e784ba2",
+        "Name": "U1_Pin38",
+        "Connection": {
+          "$id": "6f0a2d56-9232-454e-99ab-92b397533329",
+          "$values": [
+            {
+              "$id": "4e171dd1-369b-4f72-8ae4-aa2164bdab4f",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 38
+            },
+            {
+              "$id": "91a47d49-2ffe-4340-8b4d-f2418c540416",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 6
+            }
+          ]
+        }
+      },
+      {
+        "$id": "aee6a723-69f7-4e8c-bd87-48b71445a958",
+        "Name": "U1_Pin54",
+        "Connection": {
+          "$id": "e561f393-8831-4618-b557-5c73b28864ab",
+          "$values": [
+            {
+              "$id": "2e06eb55-4368-4176-a2f6-fc8ecf6da29e",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 54
+            },
+            {
+              "$id": "0877766b-5b8f-48df-bd2c-e4936c9d9511",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 22
+            }
+          ]
+        }
+      },
+      {
+        "$id": "80c48010-2877-4a03-abd9-3e79d5f3f71a",
+        "Name": "U1_Pin7",
+        "Connection": {
+          "$id": "9815a373-2b97-471f-99b8-b97e3441bdaf",
+          "$values": [
+            {
+              "$id": "c3fc3818-0145-4d50-9455-251c8478d524",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 7
+            },
+            {
+              "$id": "224e1809-2668-4fb5-8570-49b651ad9932",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 7
+            }
+          ]
+        }
+      },
+      {
+        "$id": "157876b5-fb4a-400d-9e5c-a11baad2796f",
+        "Name": "U1_Pin23",
+        "Connection": {
+          "$id": "a3b08638-8656-46d2-8723-481deaac302b",
+          "$values": [
+            {
+              "$id": "a3cabda6-3211-439b-9284-60f47f1b9c3a",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 23
+            },
+            {
+              "$id": "8ac09ce6-889c-4d11-8efa-1248fd0f0dfb",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 23
+            }
+          ]
+        }
+      },
+      {
+        "$id": "eaa7f527-86c8-4c7c-b52e-733d4151f1a6",
+        "Name": "U1_Pin39",
+        "Connection": {
+          "$id": "16fa2b7e-f9fd-45d7-b090-c2bd052182a4",
+          "$values": [
+            {
+              "$id": "55395af4-db8a-4e58-9290-fed1a0c0f4f9",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 39
+            },
+            {
+              "$id": "97e6d6de-658c-48d9-9a73-80f238f7935f",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 7
+            }
+          ]
+        }
+      },
+      {
+        "$id": "a9b2764f-7c22-4714-92cf-bb08962a950b",
+        "Name": "U1_Pin55",
+        "Connection": {
+          "$id": "bb55c354-8bc4-4888-8867-c179f7b25599",
+          "$values": [
+            {
+              "$id": "f423fb75-6043-41d5-bb4c-e77340f7a862",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 55
+            },
+            {
+              "$id": "d51168ba-674b-47a9-8845-bba70271ccd2",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 23
+            }
+          ]
+        }
+      },
+      {
+        "$id": "8388aa22-339e-4664-bcae-8d3ea0aae0a2",
+        "Name": "U1_Pin8",
+        "Connection": {
+          "$id": "836bc110-2768-461c-802e-b570f899e2c8",
+          "$values": [
+            {
+              "$id": "eeccb02a-45c9-4a84-9f81-bb41aa5c7b7c",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 8
+            },
+            {
+              "$id": "cdf7d407-e128-4913-b8e4-832066e9f4bf",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 8
+            }
+          ]
+        }
+      },
+      {
+        "$id": "fd3a16cf-f7d3-4b82-9a41-23763fb1845e",
+        "Name": "U1_Pin24",
+        "Connection": {
+          "$id": "41da9247-4a50-4c6d-9081-ac8c3ae20ea3",
+          "$values": [
+            {
+              "$id": "20f5497f-1477-40af-a3d1-1d3ca158650b",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 24
+            },
+            {
+              "$id": "decfff19-c714-480f-bdf8-877d0b8caeac",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 24
+            }
+          ]
+        }
+      },
+      {
+        "$id": "ae7595d5-e754-45dd-b8f6-f57948a05081",
+        "Name": "U1_Pin40",
+        "Connection": {
+          "$id": "e415af31-3a3b-4789-8c38-1f1b966ee44b",
+          "$values": [
+            {
+              "$id": "6d3b34b5-efde-4402-852d-4c23c8a9a2cb",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 40
+            },
+            {
+              "$id": "80f486a0-966a-4e8e-93e8-992dd50e77fd",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 8
+            }
+          ]
+        }
+      },
+      {
+        "$id": "4756518f-ec27-491a-8e77-65a2c8b20cbf",
+        "Name": "U1_Pin56",
+        "Connection": {
+          "$id": "c2c98b0e-0f1d-44ff-8a69-d1325692b13b",
+          "$values": [
+            {
+              "$id": "2ec71ae0-44f0-422f-8b48-72352ec34715",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 56
+            },
+            {
+              "$id": "23d5e869-a999-4396-9da8-b17a67cbf416",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 24
+            }
+          ]
+        }
+      },
+      {
+        "$id": "69986a31-a8c8-404b-8396-1a178c78e6c3",
+        "Name": "U1_Pin9",
+        "Connection": {
+          "$id": "f2416c1f-1ae0-42cd-93d0-c39a501965ea",
+          "$values": [
+            {
+              "$id": "badf2466-6078-4c97-851b-c720618b8a50",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 9
+            },
+            {
+              "$id": "148e54d8-e6d0-4bf1-9de5-a401597039d9",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 9
+            }
+          ]
+        }
+      },
+      {
+        "$id": "1792de8f-f7ef-490a-981f-c93051942bed",
+        "Name": "U1_Pin25",
+        "Connection": {
+          "$id": "196adfe9-3fff-4e53-baeb-cf7b18eb22cc",
+          "$values": [
+            {
+              "$id": "14727f78-d96d-4109-b86a-4d887210c1c3",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 25
+            },
+            {
+              "$id": "167be686-10c0-4e84-a21c-57bc12b7238c",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 25
+            }
+          ]
+        }
+      },
+      {
+        "$id": "a601450e-dae0-4e0c-b971-670403c425b4",
+        "Name": "U1_Pin41",
+        "Connection": {
+          "$id": "204518ef-345b-4d43-91b4-b61e9ebb634d",
+          "$values": [
+            {
+              "$id": "afcfbe5b-a00d-42b6-8b04-37f1103e258e",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 41
+            },
+            {
+              "$id": "7341ebae-86d8-4b7e-a989-63453e9e6bfb",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 9
+            }
+          ]
+        }
+      },
+      {
+        "$id": "4fc5f35d-03f2-40cb-bd98-c5267b8da414",
+        "Name": "U1_Pin57",
+        "Connection": {
+          "$id": "2a3d7507-e47f-4284-9416-131f75360733",
+          "$values": [
+            {
+              "$id": "52b5a114-a176-43b5-95b8-d15ebc1506b2",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 57
+            },
+            {
+              "$id": "db8446b3-12e4-495c-a90d-4e591bc0031c",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 25
+            }
+          ]
+        }
+      },
+      {
+        "$id": "fe034f5e-8085-4e9f-ba54-6b30dd47ba10",
+        "Name": "U1_Pin10",
+        "Connection": {
+          "$id": "c7150b15-aa25-4c8c-a945-55fa89a91f5a",
+          "$values": [
+            {
+              "$id": "5ade62f4-2938-4424-be0d-055f712b3ef3",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 10
+            },
+            {
+              "$id": "a93dffe8-ba47-43fe-b25b-d89b150c12b6",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 10
+            }
+          ]
+        }
+      },
+      {
+        "$id": "aeabbe8e-c04b-4f0f-aaa8-070cd8efdb74",
+        "Name": "U1_Pin26",
+        "Connection": {
+          "$id": "264c4531-6e92-401d-a619-cae5d05fc40d",
+          "$values": [
+            {
+              "$id": "dd0d889f-166a-4bc6-9867-889934fe7947",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 26
+            },
+            {
+              "$id": "ddd04507-36d7-49bd-9dd8-d8903097f945",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 26
+            }
+          ]
+        }
+      },
+      {
+        "$id": "b646cc5f-35ec-452c-af51-550312299986",
+        "Name": "U1_Pin42",
+        "Connection": {
+          "$id": "353318be-be34-401c-9526-ad474e3006ab",
+          "$values": [
+            {
+              "$id": "579f34e7-9760-4205-a7d3-805cf89505fc",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 42
+            },
+            {
+              "$id": "89c65aad-89d5-43af-aae1-8d2ccb51e47c",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 10
+            }
+          ]
+        }
+      },
+      {
+        "$id": "d9bf273b-69a3-4ae3-aa04-973e2962a734",
+        "Name": "U1_Pin58",
+        "Connection": {
+          "$id": "213afaff-6472-4dcc-82d0-9ba06b429043",
+          "$values": [
+            {
+              "$id": "147f710d-2a84-4db5-ae01-d1280e4fe0aa",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 58
+            },
+            {
+              "$id": "f8369218-d2ed-4a1b-851e-68ee3afe0f69",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 26
+            }
+          ]
+        }
+      },
+      {
+        "$id": "857da777-61b5-4b33-8102-9d44a5ce5a4d",
+        "Name": "U1_Pin11",
+        "Connection": {
+          "$id": "188c5643-04f9-457e-9de9-2973a8942e0f",
+          "$values": [
+            {
+              "$id": "886f53f1-f16f-44d8-8014-95c0f40f68cd",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 11
+            },
+            {
+              "$id": "8e95a896-186a-49b5-9994-73aea0593724",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 11
+            }
+          ]
+        }
+      },
+      {
+        "$id": "31694cce-fcab-40c4-8745-3f6d7814d08b",
+        "Name": "U1_Pin27",
+        "Connection": {
+          "$id": "f22f6adf-a05f-47a7-bb49-40422af0751f",
+          "$values": [
+            {
+              "$id": "af6f2ff8-ff5e-46a2-8138-636b460bf674",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 27
+            },
+            {
+              "$id": "265f2a0f-d130-4815-8d99-86230668e8a0",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 27
+            }
+          ]
+        }
+      },
+      {
+        "$id": "f9001904-6cf4-4957-a887-a505479b2e6c",
+        "Name": "U1_Pin43",
+        "Connection": {
+          "$id": "c570d340-2b09-4370-988b-d64f800f4e40",
+          "$values": [
+            {
+              "$id": "430b1308-5013-4d92-b189-e7cdf41aed6f",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 43
+            },
+            {
+              "$id": "fee8b7f4-f99d-45f4-9dff-dced409ae000",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 11
+            }
+          ]
+        }
+      },
+      {
+        "$id": "184c38bd-73ed-4669-a74b-f218cb256010",
+        "Name": "U1_Pin59",
+        "Connection": {
+          "$id": "e03ca522-ae1f-4302-89aa-29222f8d9ee5",
+          "$values": [
+            {
+              "$id": "f856e633-ed06-4ea4-87fe-f7ad3ca7000a",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 59
+            },
+            {
+              "$id": "8f69a07f-b690-4f62-bf0d-71d1fe2215ff",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 27
+            }
+          ]
+        }
+      },
+      {
+        "$id": "cb4414cc-0950-49ba-a8bc-08486b873a6d",
+        "Name": "U1_Pin12",
+        "Connection": {
+          "$id": "29b5070e-a930-46b2-92e8-15ce24fd57a5",
+          "$values": [
+            {
+              "$id": "dcfb4a1d-a470-45b5-bd9b-baa9a8928015",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 12
+            },
+            {
+              "$id": "77f8e637-36d1-4364-953b-3297e9de1cfc",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 12
+            }
+          ]
+        }
+      },
+      {
+        "$id": "bb7686bb-8bb6-440d-bfc9-75fbbf7e775d",
+        "Name": "U1_Pin28",
+        "Connection": {
+          "$id": "a93d15b3-9dea-4a19-87a1-879237e98a9a",
+          "$values": [
+            {
+              "$id": "13c2c216-65e9-457d-8cb3-c6ccc7b40f58",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 28
+            },
+            {
+              "$id": "894c7fad-daaf-4204-a10e-e42edd956353",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 28
+            }
+          ]
+        }
+      },
+      {
+        "$id": "e2060051-ca97-4622-b3ea-7c6059022d71",
+        "Name": "U1_Pin44",
+        "Connection": {
+          "$id": "2911702b-1bd3-49d1-9fe0-ed25ec1d1f26",
+          "$values": [
+            {
+              "$id": "1ce6c83b-9175-44f2-ad40-1bbd49c75bd2",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 44
+            },
+            {
+              "$id": "adfadab4-3542-4313-a585-70efff8ca498",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 12
+            }
+          ]
+        }
+      },
+      {
+        "$id": "26ab95c9-a52e-432f-994e-460b74d6ffa3",
+        "Name": "U1_Pin60",
+        "Connection": {
+          "$id": "2e6a81d6-6e30-4249-ac72-a56c1a1b5139",
+          "$values": [
+            {
+              "$id": "9f98b134-654f-4663-be1c-f85819bea984",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 60
+            },
+            {
+              "$id": "6d9a4253-9bb6-4c6e-8305-4e95250e4643",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 28
+            }
+          ]
+        }
+      },
+      {
+        "$id": "2df1ae31-6132-44e0-aa06-3edb2f969652",
+        "Name": "U1_Pin13",
+        "Connection": {
+          "$id": "4f5cbf4e-2073-46e8-945a-5b871e7a2557",
+          "$values": [
+            {
+              "$id": "96498dae-5cec-490a-b5d3-1e1047d7900e",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 13
+            },
+            {
+              "$id": "468c33c4-c012-4a92-bcdf-1fe3a1cf918f",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 13
+            }
+          ]
+        }
+      },
+      {
+        "$id": "ab4e2ded-e8e5-4b40-abcc-7fa5b13a06f0",
+        "Name": "U1_Pin29",
+        "Connection": {
+          "$id": "f68cb1c1-85b6-4966-9c48-ea606d0d85eb",
+          "$values": [
+            {
+              "$id": "cb4d52a9-f908-496a-bbdb-8a4bfb781bad",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 29
+            },
+            {
+              "$id": "c322a8e8-7733-4588-8b18-5655cb4922fc",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 29
+            }
+          ]
+        }
+      },
+      {
+        "$id": "ab07a9bb-f9f7-46cb-880e-8bba0eb6dc37",
+        "Name": "U1_Pin45",
+        "Connection": {
+          "$id": "778b7641-5438-4bb4-a633-4a6057caa9c7",
+          "$values": [
+            {
+              "$id": "96c6834c-d142-4ca1-815e-7d8e353958f4",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 45
+            },
+            {
+              "$id": "2c2c79af-c75f-4bad-a4f4-aa68e61a46fb",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 13
+            }
+          ]
+        }
+      },
+      {
+        "$id": "f9b68030-185b-4e05-b545-4115da8b5d63",
+        "Name": "U1_Pin61",
+        "Connection": {
+          "$id": "2901ee6b-2b46-4872-a44e-1f9d5b316736",
+          "$values": [
+            {
+              "$id": "65f47b2d-b088-4b70-96c7-e28e66c47789",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 61
+            },
+            {
+              "$id": "7ceb840a-8c86-47c2-a373-b61792460de1",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 29
+            }
+          ]
+        }
+      },
+      {
+        "$id": "5f2c5485-4391-4cbb-b624-473e283b33d3",
+        "Name": "U1_Pin14",
+        "Connection": {
+          "$id": "e1833cea-d749-4150-a0b3-b68e0d1622b7",
+          "$values": [
+            {
+              "$id": "71ae2d33-f38b-40ca-8acc-3f9fce562595",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 14
+            },
+            {
+              "$id": "ecc66328-2e0b-47c9-9e09-8eb46392a2f0",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 14
+            }
+          ]
+        }
+      },
+      {
+        "$id": "b6b692d9-1b33-4ee1-9806-4d267a4bb80e",
+        "Name": "U1_Pin30",
+        "Connection": {
+          "$id": "7e337273-ca31-4a30-8573-adefbef902e5",
+          "$values": [
+            {
+              "$id": "418f1d94-ed40-405e-a451-fb28e8f033c2",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 30
+            },
+            {
+              "$id": "db6dbe02-15fa-47e6-afb7-54ad9f9bdf37",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 30
+            }
+          ]
+        }
+      },
+      {
+        "$id": "89ce6e2d-6905-4521-9233-03861eb46ce7",
+        "Name": "U1_Pin46",
+        "Connection": {
+          "$id": "7468c2b0-fc71-4011-ad90-5d46832d35d1",
+          "$values": [
+            {
+              "$id": "1325548d-200b-4b76-8e3c-c65f677125cf",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 46
+            },
+            {
+              "$id": "3ea1c378-1c2d-46b1-9425-b903e2f9b06a",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 14
+            }
+          ]
+        }
+      },
+      {
+        "$id": "d3d9e7f9-c978-40b3-b050-75afbf204079",
+        "Name": "U1_Pin62",
+        "Connection": {
+          "$id": "40c1504b-9baf-4665-b7ef-c150c2ddf31b",
+          "$values": [
+            {
+              "$id": "ad362a06-6f4f-4606-b418-6c793473d606",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 62
+            },
+            {
+              "$id": "09539199-d0f7-493f-bb1a-5aa01c04c315",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 30
+            }
+          ]
+        }
+      },
+      {
+        "$id": "c28806d1-d293-4bb2-9665-c35ab1785b1a",
+        "Name": "U1_Pin15",
+        "Connection": {
+          "$id": "2b158068-c19c-4e38-b24a-70df5476778c",
+          "$values": [
+            {
+              "$id": "02bdc8bb-8cbf-478d-b21b-2bc33ce293af",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 15
+            },
+            {
+              "$id": "6dcf46b8-48b3-4a24-8db8-9ab7f3db7ddb",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 15
+            }
+          ]
+        }
+      },
+      {
+        "$id": "ffd3ee42-b869-47e2-89f7-eb452fea34ec",
+        "Name": "U1_Pin31",
+        "Connection": {
+          "$id": "ebd0249e-8547-4dec-9eaf-cc5e0eeace99",
+          "$values": [
+            {
+              "$id": "d53e6201-3139-4418-b49d-5bc3bf7d765b",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 31
+            },
+            {
+              "$id": "27196c29-a25f-4d3b-8083-f4bd51cff246",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 31
+            }
+          ]
+        }
+      },
+      {
+        "$id": "be7bbb55-137e-482d-80e6-22a96e03b6fe",
+        "Name": "U1_Pin47",
+        "Connection": {
+          "$id": "0d732da9-f620-4493-96bb-7bba1a8a2c0b",
+          "$values": [
+            {
+              "$id": "35de0128-5126-43bb-9f9d-d3ff9ac95eb9",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 47
+            },
+            {
+              "$id": "9b93ec41-0729-40b9-91c5-7f744db9f5da",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 15
+            }
+          ]
+        }
+      },
+      {
+        "$id": "016152e8-b500-4422-af1e-ceb14357a4e1",
+        "Name": "U1_Pin63",
+        "Connection": {
+          "$id": "f475477a-ffa4-4b3e-ae08-ca97a7de8ecf",
+          "$values": [
+            {
+              "$id": "28c262f7-da5d-402f-898b-2ec645fe7ee1",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 63
+            },
+            {
+              "$id": "28c5ee72-8346-4a76-8670-7d515954d6f8",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 31
+            }
+          ]
+        }
+      },
+      {
+        "$id": "8427340f-55c3-4be7-a493-b9a14f1c6944",
+        "Name": "U1_Pin16",
+        "Connection": {
+          "$id": "9043afc6-b922-40b3-a265-6972161b647b",
+          "$values": [
+            {
+              "$id": "db08c84d-5829-4c39-9153-a2588e911eb3",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 16
+            },
+            {
+              "$id": "e80285a8-337a-4106-98f0-3494c9d6d6fb",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 16
+            }
+          ]
+        }
+      },
+      {
+        "$id": "2e325998-ba3e-4896-8ceb-16d9952273d0",
+        "Name": "U1_Pin32",
+        "Connection": {
+          "$id": "359bb0b2-ce56-4fb4-80b1-3c36dc5eaf25",
+          "$values": [
+            {
+              "$id": "4829382c-fd95-4128-bf93-70c07592f01a",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 32
+            },
+            {
+              "$id": "31c4dc07-de2f-41a1-95a3-9fbf5292df6f",
+              "Element": {
+                "$ref": "4112d596-efa7-41c3-9e01-e5db9f1b5824"
+              },
+              "ElementPin": 32
+            }
+          ]
+        }
+      },
+      {
+        "$id": "eae33ee9-79fe-4d0e-8861-8af296f7a6cb",
+        "Name": "U1_Pin48",
+        "Connection": {
+          "$id": "e4856e2d-91a3-4f69-865d-95e61d327dd3",
+          "$values": [
+            {
+              "$id": "10f1fc24-0acd-45ea-9423-1ebf84226b27",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 48
+            },
+            {
+              "$id": "21c719fc-7363-4768-b110-0460a1f50ce9",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 16
+            }
+          ]
+        }
+      },
+      {
+        "$id": "10886e3f-2ebd-4b65-a0f9-41a0fb6f41bd",
+        "Name": "U1_Pin64",
+        "Connection": {
+          "$id": "bb5bc972-2bfe-4faf-8c61-f89b5a67712c",
+          "$values": [
+            {
+              "$id": "58af9be6-64ab-4751-a622-69417046eee9",
+              "Element": {
+                "$ref": "d3f40e37-26c9-49c6-ba97-e813d6ff8c78"
+              },
+              "ElementPin": 64
+            },
+            {
+              "$id": "5e1b2996-d54b-4f46-aa43-a965113c5b47",
+              "Element": {
+                "$ref": "38f607d1-b34c-4f18-920e-7f6fea591e89"
+              },
+              "ElementPin": 32
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

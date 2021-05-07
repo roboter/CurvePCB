@@ -1,9 +1,12 @@
-﻿using Svg;
+﻿using CurvePCB.Lib;
+using Svg;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +20,12 @@ using System.Windows.Shapes;
 
 namespace CurvePCB
 {
+    public static class Constants
+    {
+        public const double IN = 2.54;
+        public const double PointWidth = 0.6;
+    }
+
     public class Dimention
     {
         public Dimention(double x, double y, double width, double height)
@@ -38,6 +47,43 @@ namespace CurvePCB
         public bool Contains(Point p) => (p.X > X && p.X < X + Width && p.Y > Y && p.Y < Y + Height);
     }
 
+    public class HeaderPins : System.Windows.Shapes.Shape
+    {
+        const double PinWidth = 1;
+
+        private int Count;
+
+        private double Pitch;
+
+        public HeaderPins(int count, double pitch = Constants.IN)
+        {
+            Count = count;
+            Pitch = pitch;
+        }
+
+        /// <summary>
+        /// Get the geometry that defines this shape
+        /// </summary>
+        protected override Geometry DefiningGeometry
+        {
+            get
+            {
+                return _geometry;
+            }
+        }
+
+        private EllipseGeometry _geometry = new(new Rect(100, 100, 100, 100));
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            Debug.WriteLine("OnRender");
+            for (int i = 0; i != Count; i++)
+            {
+                drawingContext.DrawRectangle(Brushes.DodgerBlue, null, new Rect { Height = PinWidth, Width = PinWidth, Location = new Point { X = -0.5, Y = -0.5 + Pitch * i } });
+            }
+        }
+    }
+
     public class Pins : IElement
     {
         private bool selected = false;
@@ -45,15 +91,16 @@ namespace CurvePCB
         private Canvas canvas;
         private const int pinsOnSide = 16;
         private Point pos;
-        private List<Shape> rectangles = new List<Shape>();
+        private List<System.Windows.Shapes.Shape> rectangles = new List<System.Windows.Shapes.Shape>();
         private const double width = 1; // mm
         private const double height = 1; // mm
         private const double next = 2.54; // mm
+        public Guid Id { get; } = Guid.NewGuid();
 
-        public Pins(Canvas canvas)
+        public Pins()
         {
-           
-            this.canvas = canvas;
+
+            // this.canvas = canvas;
         }
 
         public void Clicked(Point brushPosition)
@@ -70,17 +117,17 @@ namespace CurvePCB
             }
         }
 
-        public Point[] Draw(Point offset)
+        public ConnectionPoint[] Draw(Point offset)
         {
             pos = offset;
             dimention = new Dimention(pos.X, pos.Y, 12, 12);
-            var points = new List<Point>();
+            var points = new List<ConnectionPoint>();
 
             for (int i = 0; i != pinsOnSide; i++)
             {
                 var rectangle1 = new Rectangle { RadiusX = 5, Width = width, Height = height };
-                Canvas.SetLeft(rectangle1, offset.X -width/2);
-                points.Add(new Point(offset.Y, offset.X));
+                Canvas.SetLeft(rectangle1, offset.X - width / 2);
+                // points.Add(new ConnectionPoint(@"PIN_{i}"));
                 Canvas.SetTop(rectangle1, offset.Y + i * (next) - width / 2);
                 rectangle1.Fill = Brushes.Fuchsia;
                 rectangle1.Stroke = Brushes.Black;
@@ -100,10 +147,10 @@ namespace CurvePCB
     {
         void Move(Point point);
         void Clicked(Point position);
-        Point[] Draw(Point point);
+        ConnectionPoint[] Draw(Point point);
     }
 
-    public class Element : IElement
+    public class LQFP : IElement
     {
         const double IN = 2.54;
         private const double width = 1.2; // mm
@@ -119,51 +166,60 @@ namespace CurvePCB
         private Rectangle body;
 
         public Canvas canvas { get; set; }
-        public Element(Canvas canvas)
+        public LQFP(Canvas canvas)
         {
             this.canvas = canvas;
         }
 
-        public Point[] Draw(Point offset)
+        public ConnectionPoint[] Draw(Point offset)
         {
             pos = offset;
             dimention = new Dimention(pos.X, pos.Y, 12, 12);
-            var points = new List<Point>();
+            var points = new List<ConnectionPoint>();
             for (int i = 0; i != pinsOnSide; i++)
             {
                 var rectangle1 = new Rectangle { RadiusX = 5, Width = width, Height = height };
                 Canvas.SetLeft(rectangle1, offset.X);
-                points.Add(new Point(offset.Y, offset.X));
+                //  points.Add(new ConnectionPoint($"PIN_{i}"));
                 Canvas.SetTop(rectangle1, offset.Y + i * (next) + start);
                 rectangle1.Fill = Brushes.Fuchsia;
                 rectangle1.Stroke = Brushes.Black;
+
+                //rectangle1.LayoutTransform = new RotateTransform(45);  // Rotate
                 canvas.Children.Add(rectangle1);
                 rectangles.Add(rectangle1);
 
                 var rectangle2 = new Rectangle { RadiusX = 5, Width = width, Height = height };
                 Canvas.SetLeft(rectangle2, offset.X + 10 + 0.8);
-                points.Add(new Point(offset.Y, offset.X));
+                // points.Add(new ConnectionPoint($"PIN_{pinsOnSide + i}"));
                 Canvas.SetTop(rectangle2, offset.Y + i * (next) + start);
                 rectangle2.Fill = Brushes.Fuchsia;
                 rectangle2.Stroke = Brushes.Black;
+
+                //rectangle2.LayoutTransform = new RotateTransform(45);  // Rotate
                 canvas.Children.Add(rectangle2);
                 rectangles.Add(rectangle2);
 
                 var rectangle3 = new Rectangle { RadiusX = 5, Width = height, Height = width };
                 Canvas.SetLeft(rectangle3, offset.X + i * (next) + start);
-                points.Add(new Point(offset.Y, offset.X));
+                //  points.Add(new ConnectionPoint($"PIN_{pinsOnSide * 2 + i}"));
                 Canvas.SetTop(rectangle3, offset.Y + 10 + 0.8);
                 rectangle3.Fill = Brushes.Fuchsia;
                 rectangle3.Stroke = Brushes.Black;
+
+                //rectangle3.LayoutTransform = new RotateTransform(45);  // Rotate
                 canvas.Children.Add(rectangle3);
                 rectangles.Add(rectangle3);
 
                 var rectangle4 = new Rectangle { RadiusX = 5, Width = height, Height = width };
                 Canvas.SetLeft(rectangle4, offset.X + i * (next) + start);
-                points.Add(new Point(offset.Y, offset.X));
+                //   points.Add(new ConnectionPoint($"PIN_{pinsOnSide * 3 + i}"));
                 Canvas.SetTop(rectangle4, offset.Y);
                 rectangle4.Fill = Brushes.Fuchsia;
                 rectangle4.Stroke = Brushes.Black;
+
+                //rectangle4.LayoutTransform = new RotateTransform(45);  // Rotate
+
                 canvas.Children.Add(rectangle4);
                 rectangles.Add(rectangle4);
             }
@@ -198,7 +254,6 @@ namespace CurvePCB
 
             canvas.Children.Add(body);
             #endregion
-
 
             #region pins
             var pins = new Rectangle { RadiusX = 2, Width = 7.5, Height = 7.5 }; // mm
@@ -235,16 +290,17 @@ namespace CurvePCB
                 dimention.X = brushPosition.X;
                 dimention.Y = brushPosition.Y;
 
+                foreach (var rectangle in rectangles)
+                {
+                    Canvas.SetLeft(rectangle, Canvas.GetLeft(border) - Canvas.GetLeft(rectangle) + brushPosition.X);
+                    Canvas.SetTop(rectangle, Canvas.GetTop(border) - Canvas.GetTop(rectangle) + brushPosition.Y);
+                }
+
                 Canvas.SetLeft(border, brushPosition.X);
                 Canvas.SetTop(border, brushPosition.Y);
 
-                int i = 0;
-                foreach (var rectangle in rectangles)
-                {
-                    Canvas.SetLeft(rectangle, brushPosition.X);
-                    Canvas.SetTop(rectangle, brushPosition.Y + i * next + start);
-                    i++;
-                }
+                Canvas.SetLeft(body, brushPosition.X + 1);
+                Canvas.SetTop(body, brushPosition.Y + 1);
             }
             else
             {
@@ -292,22 +348,21 @@ namespace CurvePCB
         private List<Point> curvePoints = new();
         private List<IElement> elements = new();
         private List<Rectangle> drPoints = new();
+        private Schematic schematic;
 
         Point[] points1 =
           {
-                new Point(60, 30),
-                new Point(200, 130),
-                new Point(100, 150),
-                new Point(200, 50),
-              //    new Point(20, 20),
+                new Point(Constants.IN, Constants.IN),
+                new Point(Constants.IN *5, Constants.IN),
+                new Point(Constants.IN *8, Constants.IN *4),
+                new Point(Constants.IN *10, Constants.IN *5),
             };
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
-        Path path;
+        System.Windows.Shapes.Path path;
         Line line1;
         Line line2;
-
 
         public MainWindow()
         {
@@ -315,17 +370,31 @@ namespace CurvePCB
 
             DrawGrid();
 
-            var offset = new Point(25, 25);
+            //var offset = new Point(25, 25);
 
-            //var qfn48 = ;
-            elements = new List<IElement> { new Element(canvas), new Pins(canvas) };
-            //var qfnPoints = ((IElement)qfn48).Draw(new Point(3, 3));
+
+            elements = new List<IElement> { new LQFP(canvas) };
 
             foreach (IElement el in elements)
             {
-                el.Draw(new Point(IN, IN));
+                el.Draw(new Point(Constants.IN * 3, Constants.IN * 6));
             }
 
+            // Canvas.LayoutTransformProperty
+
+            var el1 = new HeaderPins(24);
+            canvas.Children.Add(el1);
+
+            Canvas.SetLeft(el1, Constants.IN);
+            Canvas.SetTop(el1, Constants.IN);
+
+            var el2 = new HeaderPins(24);
+            canvas.Children.Add(el2);
+
+            Canvas.SetLeft(el2, Constants.IN * 10);
+            Canvas.SetTop(el2, Constants.IN);
+
+            // el1.LayoutTransform = new RotateTransform(45);  // Rotate
 
             //var curves = new List<Tuple<Point, Point>>();
             //for (int i = 0; i != 1; i++)
@@ -334,34 +403,42 @@ namespace CurvePCB
             //    //   addPoint(p, 10, new SolidColorBrush(Colors.GreenYellow));
             //    curves.Add(new Tuple<Point, Point>(qfnPoints[i], new Point { X = 0 + offset.Y, Y = i * 2.54 + offset.X }));
             //}
+            line1 = new Line { X1 = points1[0].X - 0.5 / 2, X2 = points1[1].X - 0.5 / 2, Y1 = points1[0].Y - 0.5 / 2, Y2 = points1[1].Y - 0.5 / 2 };
+            line1.Stroke = Brushes.Black;
+            line1.StrokeThickness = 0.2;
+            line1.StrokeDashArray = DoubleCollection.Parse("5 5");
+            line2 = new Line { X1 = points1[2].X - 0.5 / 2, X2 = points1[3].X - 0.5 / 2, Y1 = points1[2].Y - 0.5 / 2, Y2 = points1[3].Y - 0.5 / 2 };
+            line2.Stroke = Brushes.Black;
+            line2.StrokeDashArray = DoubleCollection.Parse("5 5");
+            line2.StrokeThickness = 0.2;
+            canvas.Children.Add(line1);
+            canvas.Children.Add(line2);
 
             foreach (Point point in points1)
             {
                 Rectangle rect = new();
-                rect.Width = 3;
-                rect.Height = 3;
-                Canvas.SetTop(rect, point.Y - 3);
-                Canvas.SetLeft(rect, point.X - 3);
+                rect.Width = Constants.PointWidth;
+                rect.Height = Constants.PointWidth;
+                Canvas.SetTop(rect, point.Y - Constants.PointWidth / 2);
+                Canvas.SetLeft(rect, point.X - Constants.PointWidth / 2);
                 rect.Fill = Brushes.White;
                 rect.Stroke = Brushes.Black;
-                rect.StrokeThickness = 1;
+                rect.StrokeThickness = 0;
                 canvas.Children.Add(rect);
+                rect.MouseEnter += (object sender, MouseEventArgs e) =>
+                {
+                    ((Rectangle)sender).Fill = Brushes.OrangeRed;
+                };
+                rect.MouseLeave += (object sender, MouseEventArgs e) =>
+                {
+                    ((Rectangle)sender).Fill = Brushes.White;
+                };
                 rect.MouseLeftButtonDown += Rect_MouseLeftButtonDown;
                 rect.MouseMove += Rect_MouseMove;
                 rect.DragEnter += Rect_DragEnter;
                 rect.MouseLeftButtonUp += Rect_MouseLeftButtonUp;
                 drPoints.Add(rect);
             }
-            line1 = new Line { X1 = points1[0].X, X2 = points1[1].X, Y1 = points1[0].Y, Y2 = points1[1].Y };
-            line1.Stroke = Brushes.Black;
-            line1.StrokeThickness = 0.1;
-            line1.StrokeDashArray = DoubleCollection.Parse("40 40");
-            line2 = new Line { X1 = points1[2].X, X2 = points1[3].X, Y1 = points1[2].Y, Y2 = points1[3].Y };
-            line2.Stroke = Brushes.Black;
-            line2.StrokeDashArray = DoubleCollection.Parse("4 4");
-            line2.StrokeThickness = 0.5;
-            canvas.Children.Add(line1);
-            canvas.Children.Add(line2);
 
             PathSegmentCollection path_segment_collection = new();
             // Create a Path to hold the geometry.
@@ -387,13 +464,14 @@ namespace CurvePCB
             path_segment_collection.Add(bezier_segment);
 
             path.Stroke = Brushes.LightGreen;
-            path.StrokeThickness = 1;
+            path.StrokeThickness = .3;
             canvas.Children.Add(path);
 
             ScaleTransform zoomTransform = new();
             zoomTransform.ScaleX = zoomTransform.ScaleY = zoom;
             canvas.RenderTransform = zoomTransform;
         }
+
 
         private void Rect_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -419,7 +497,7 @@ namespace CurvePCB
                 {
                     var segment = (PolyBezierSegment)pathFigure.Segments.FirstOrDefault();
 
-                    Point[] newPointCollection = drPoints.Select(dp => new Point { X = Canvas.GetLeft(dp), Y = Canvas.GetTop(dp) }).ToArray();
+                    Point[] newPointCollection = drPoints.Select(dp => new Point { X = Canvas.GetLeft(dp) + Constants.PointWidth / 2, Y = Canvas.GetTop(dp) + Constants.PointWidth / 2 }).ToArray();
 
                     pathFigure.StartPoint = newPointCollection[0];
 
@@ -459,14 +537,6 @@ namespace CurvePCB
             throw new NotImplementedException();
         }
 
-        private void Save()
-        {
-            var document = new SvgDocument();
-            document.Children.Add(new SvgText { Text = "test1" });
-            document.Write("test1.svg");
-        }
-
-        const double IN = 2.54;
         private void DrawGrid()
         {
             var brush = new SolidColorBrush(Colors.DarkRed)
@@ -474,9 +544,9 @@ namespace CurvePCB
                 Opacity = 0.5,
             };
 
-            for (double i = 0; i < 100; i += IN )
+            for (double i = 0; i < Constants.IN * 50; i += Constants.IN)
             {
-                for (double j = 0; j < 100; j += IN )
+                for (double j = 0; j < Constants.IN * 50; j += Constants.IN)
                 {
                     addPoint(new Point { X = i, Y = j }, 0.25, brush);
                 }
@@ -504,9 +574,7 @@ namespace CurvePCB
             {
                 foreach (var element in elements)
                 {
-                    {
-                        element.Move(new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y));
-                    }
+                    element.Move(new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y));
                 }
             }
         }
@@ -514,6 +582,60 @@ namespace CurvePCB
         private void canvas_MouseLeave(object sender, MouseEventArgs e)
         {
             //  label1.Content = "X,Y:";
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            schematic = JsonSerializer.Deserialize<Schematic>(File.ReadAllText("schematic.json"));
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            //schematic = JsonSerializer.Deserialize<Schematic>(File.ReadAllText("schematic.json"));
+            if (schematic is null)
+            {
+                var lqfpId = Guid.NewGuid();
+                var pins = new Pins()
+                {
+
+                };
+                schematic = new Schematic
+                {
+                    Elements = new List<Element>
+                    {
+
+                    },
+                    Nets = new List<Net>
+                    {
+                        new Net
+                        {
+                             Name = "Pin1",
+                             Connection = new List<ConnectionPoint>{
+
+                             }
+                        }
+                    }
+                };
+            }
+
+            File.WriteAllText("schematic.json", JsonSerializer.Serialize(schematic));
+        }
+
+
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            var document = new SvgDocument();
+            document.Children.Add(new SvgText { Text = "test1" });
+            document.Write("test1.svg");
+        }
+        private void CommonCommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void canvas_MouseUp(object sender, MouseButtonEventArgs e)
@@ -528,9 +650,7 @@ namespace CurvePCB
 
             foreach (var element in elements)
             {
-                {
-                    element.Clicked(brushPosition);
-                }
+                element.Clicked(brushPosition);
             }
         }
 

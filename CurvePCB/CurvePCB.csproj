@@ -10,4 +10,12 @@
     <PackageReference Include="Svg" Version="3.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Elements\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CurvePCB.Lib\CurvePCB.Lib.csproj" />
+  </ItemGroup>
+
 </Project>

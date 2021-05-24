@@ -22,21 +22,13 @@ namespace CurvePCB.Test
             var net = new Net
             {
                 Name = "Pin1",
-                Connection = new List<ConnectionPoint>
-                         {
-                           connectionPoint
-                         }
+                Connection = new List<ConnectionPoint> { connectionPoint }
             };
             var testSchematic = new Schematic
             {
                 Name = "ConnectorsTest",
-                Elements = new List<Element>
-                {
-                   u1
-                },
-                Nets = new List<Net> {
-                    net
-                }
+                Elements = new List<Element> { u1 },
+                Nets = new List<Net> { net }
             };
 
             JsonSerializerOptions options = new JsonSerializerOptions
@@ -65,94 +57,40 @@ namespace CurvePCB.Test
                 nets.Add(new Net
                 {
                     Name = $"U1_Pin{i}",
-                    Connection = new List<ConnectionPoint>
-                         {
-                           new ConnectionPoint
-                           {
-                               Element = u1,
-                               ElementPin = i
-                           },
-                            new ConnectionPoint
-                           {
-                               Element = j1,
-                               ElementPin = i
-                           }
-                    }
+                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i }, new ConnectionPoint { Element = j1, ElementPin = i } }
                 });
 
                 nets.Add(new Net
                 {
                     Name = $"U1_Pin{i + 16}",
-                    Connection = new List<ConnectionPoint>
-                         {
-                           new ConnectionPoint
-                           {
-                               Element = u1,
-                               ElementPin = i +16
-                           },
-                             new ConnectionPoint
-                           {
-                               Element = j1,
-                               ElementPin = i +16
-                           }
-                    }
+                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 }, new ConnectionPoint { Element = j1, ElementPin = i + 16 } }
                 });
 
                 nets.Add(new Net
                 {
                     Name = $"U1_Pin{i + 16 * 2}",
-                    Connection = new List<ConnectionPoint>
-                         {
-                           new ConnectionPoint
-                           {
-                               Element = u1,
-                               ElementPin = i +16 * 2
-                           },
-                            new ConnectionPoint
-                           {
-                               Element = j2,
-                               ElementPin = i
-                           }
-                    }
+                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 2 }, new ConnectionPoint { Element = j2, ElementPin = i } }
                 });
 
                 nets.Add(new Net
                 {
                     Name = $"U1_Pin{i + 16 * 3}",
-                    Connection = new List<ConnectionPoint>
-                         {
-                           new ConnectionPoint
-                           {
-                               Element = u1,
-                               ElementPin = i +16 * 3
-                           },
-                             new ConnectionPoint
-                           {
-                               Element = j2,
-                               ElementPin = i +16
-                           }
-                    }
+                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 3 }, new ConnectionPoint { Element = j2, ElementPin = i + 16 } }
                 });
             }
-
-            var testSchematic = new Schematic
-            {
-                Name = "ConnectorsTest",
-                Elements = new List<Element>
-                {
-                   u1, j1, j2
-                },
-                Nets = nets
-            };
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
                 ReferenceHandler = new GuidReferenceHandler()
             };
-            var json = JsonSerializer.Serialize(testSchematic, options);
 
-            File.WriteAllText("test.json", json);
+            File.WriteAllText("test.json", JsonSerializer.Serialize(new Schematic
+            {
+                Name = "ConnectorsTest",
+                Elements = new List<Element> { u1, j1, j2 },
+                Nets = nets
+            }, options));
         }
     }
 }

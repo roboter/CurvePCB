@@ -4,12 +4,49 @@ namespace CurvePCB.Lib
 {
     public static class DemoBoard
     {
+        const double lqfpPinWidth = .2;
+        const double lqfpPinHeight = 1;
+
+        const double lqfpPinSpacing = .5;
+        const double lqfnBorder = 12;
+
+        const double lqfpChipSize = 10;
+
+        const double lqfpChipAllPins = 7.5;
+        const double lqfpChipFirstPin = (lqfnBorder - lqfpChipAllPins) / 2;
+
         public static Schematic Generate()
         {
-            var connector = new Shape { Name = "Connector", Pins = 16 * 2, Size = new Size(100, 10) };
-            var u1 = new Element { Name = "U1", Shape = new Shape { Name = "LQFP", Pins = 16 * 4, Size = new Size(100, 100) }, Position = new Position(10, 10) };
-            var j1 = new Element { Name = "J1", Shape = connector, Position = new Position(20, 20) };
-            var j2 = new Element { Name = "J2", Shape = connector, Position = new Position(30, 30) };
+            List<Element> connectorPins = new();
+
+            for (int i = 1; i != (16 * 2) + 1; i++)
+            {
+                connectorPins.Add(new Element { Name = $"Pin{i}", Shape = new Shape { Name = $"PIN{i}", Size = new Size(Constants.IN / 2, Constants.IN / 2) }, Position = new Position(i * Constants.IN, Constants.IN) });
+            }
+
+            var connector = new Shape
+            {
+                Name = "Connector",
+                Pins = connectorPins,
+                Size = new Size(Constants.IN * 33, Constants.IN * 2)
+            };
+
+            List<Element> lqfpPins = new();
+            for (int i = 1; i != 17; i++)
+            {
+                //1 - 16
+                lqfpPins.Add(new Element { Name = $"Pin{i}", Shape = new Shape { Name = $"PIN{i}", Size = new Size(lqfpPinHeight, lqfpPinWidth) }, Position = new Position(lqfpPinHeight / 2, lqfpChipFirstPin + (i - 1) * lqfpPinSpacing - lqfpPinWidth / 2) });
+                //17 -32
+                lqfpPins.Add(new Element { Name = $"Pin{i + 16}", Shape = new Shape { Name = $"PIN{i + 16}", Size = new Size(lqfpPinWidth, lqfpPinHeight) }, Position = new Position(lqfpChipFirstPin + (i - 1) * lqfpPinSpacing - lqfpPinWidth / 2 , lqfpChipSize + lqfpPinHeight / 2 + lqfpPinHeight) });
+                //33 -48
+                lqfpPins.Add(new Element { Name = $"Pin{i + 32}", Shape = new Shape { Name = $"PIN{i + 32}", Size = new Size(lqfpPinHeight, lqfpPinWidth) }, Position = new Position(lqfpChipSize + lqfpPinHeight + lqfpPinHeight / 2, lqfpChipFirstPin + (i - 1) * lqfpPinSpacing - lqfpPinWidth / 2) });
+                //49 - 54
+                lqfpPins.Add(new Element { Name = $"Pin{i + 48}", Shape = new Shape { Name = $"PIN{i + 48}", Size = new Size(lqfpPinWidth, lqfpPinHeight) }, Position = new Position(lqfpChipFirstPin + (i - 1) * lqfpPinSpacing - lqfpPinWidth / 2, lqfpPinHeight / 2) });
+            }
+
+            var u1 = new Element { Name = "U1", Shape = new Shape { Name = "LQFP", Pins = lqfpPins, Size = new Size(lqfnBorder, lqfnBorder) }, Position = new Position(Constants.IN * 16 + Constants.IN / 2, Constants.IN * 5) };
+            var j1 = new Element { Name = "J1", Shape = connector, Position = new Position(Constants.IN * 2, Constants.IN * 1) };
+            var j2 = new Element { Name = "J2", Shape = connector, Position = new Position(Constants.IN * 2, Constants.IN * 12) };
 
             var nets = new List<Net>();
             for (int i = 1; i != 17; i++)

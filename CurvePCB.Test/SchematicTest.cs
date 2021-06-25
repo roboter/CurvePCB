@@ -46,8 +46,8 @@ namespace CurvePCB.Test
         [Fact]
         public void SchematicNetTest()
         {
-            var connector = new Shape { Name = "Connector", Pins = 16 * 2 };
-            var u1 = new Element { Name = "U1", Shape = new Shape { Name = "LQFP", Pins = 16 * 4 } };
+            var connector = new Shape { Name = "Connector", PinsCount = 16 * 2 };
+            var u1 = new Element { Name = "U1", Shape = new Shape { Name = "LQFP", PinsCount = 16 * 4 } };
             var j1 = new Element { Name = "J1", Shape = connector };
             var j2 = new Element { Name = "J2", Shape = connector };
 

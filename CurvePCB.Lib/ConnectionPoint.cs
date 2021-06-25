@@ -383,6 +383,8 @@ namespace CurvePCB.Lib
 
         public string Name { get; set; }
 
-        public int Pins { get; set; }
+        public int PinsCount { get; }
+
+        public IList<Element> Pins { get; set; }
     }
 }

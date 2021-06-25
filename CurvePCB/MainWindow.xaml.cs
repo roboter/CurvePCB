@@ -1,8 +1,10 @@
-﻿using CurvePCB.Lib;
+﻿using CurvePCB;
+using CurvePCB.Lib;
 using Svg;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -14,6 +16,59 @@ using System.Windows.Shapes;
 
 namespace CurvePCB
 {
+
+    public class DrawingElement : System.Windows.Shapes.Shape
+    {
+        public decimal RadiusX { get; set; }
+        public decimal RadiusY { get; set; }
+
+       
+
+        Element _element;
+
+        public DrawingElement(Element element)
+        {
+            _element = element;
+            ellipse = new EllipseGeometry();
+
+            //this.Stroke = Brushes.Gray;
+            //this.StrokeThickness = 0.1;
+            //this.Fill = 
+        }
+
+        EllipseGeometry ellipse;
+        protected override Geometry DefiningGeometry
+        {
+            get
+            {
+                return ellipse;
+            }
+        }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+
+            var br = new SolidColorBrush();
+            br.Opacity = 1;
+            drawingContext.DrawRectangle(Brushes.Transparent, new Pen(Stroke, 0.1), new Rect(0, 0, _element.Shape.Size.Width, _element.Shape.Size.Height));
+
+            drawingContext.DrawText(new FormattedText(_element.Name, CultureInfo.InvariantCulture, FlowDirection.LeftToRight, new Typeface("Comic Sans"), 3, Brushes.Coral), new Point(0,0));
+
+            #region DrawingPins
+            if (_element.Shape.Pins != null)
+            {
+                foreach (var pin in _element.Shape.Pins)
+                {
+                   
+                  //  drawingContext.DrawRectangle(Brushes.Transparent, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width - _element.Shape.Size.Width / 2, pin.Position.Y - pin.Shape.Size.Height - _element.Shape.Size.Height / 2, pin.Shape.Size.Width * 2, Height = pin.Shape.Size.Height * 2));
+
+                    drawingContext.DrawRectangle(Brushes.Red, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width/2, pin.Position.Y - pin.Shape.Size.Height / 2, pin.Shape.Size.Width , Height = pin.Shape.Size.Height ));
+                }
+            }
+            #endregion
+        }
+    }
+
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -28,14 +83,15 @@ namespace CurvePCB
         private List<IElement> elements = new();
         private List<Rectangle> drPoints = new();
         private Schematic schematic;
+        const double padRounding = .1;
 
-        //Point[] points1 =
-        //{
-        //    new Point(Constants.IN, Constants.IN),
-        //    new Point(Constants.IN * 5, Constants.IN),
-        //    new Point(Constants.IN * 8, Constants.IN * 4),
-        //    new Point(Constants.IN * 10, Constants.IN * 5)
-        //};
+        Point[] points1 =
+        {
+            new Point(Constants.IN, Constants.IN),
+            new Point(Constants.IN * 5, Constants.IN),
+            new Point(Constants.IN * 8, Constants.IN * 4),
+            new Point(Constants.IN * 10, Constants.IN * 5)
+        };
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
@@ -45,14 +101,67 @@ namespace CurvePCB
 
         private void DrawElement(Element element)
         {
-            //draw border
-            var border = new Rectangle { RadiusX = 5, Width = element.Shape.Size.Width, Height = element.Shape.Size.Height };
-            Canvas.SetLeft(border, element.Position.X);
-            Canvas.SetTop(border, element.Position.Y);
-            border.Fill = Brushes.Fuchsia;
+
+            #region Shape
+            //if (element.Shape.Pins != null)
+            //{
+            //    foreach (var pin in element.Shape.Pins)
+            //    {
+            //        var pinborder = new DrawingElement { RadiusX = 1, RadiusY = 1, Width = pin.Shape.Size.Width * 2, Height = pin.Shape.Size.Height * 2 };
+            //        Canvas.SetLeft(pinborder, element.Position.X + pin.Position.X - pin.Shape.Size.Width);
+            //        Canvas.SetTop(pinborder, element.Position.Y + pin.Position.Y - pin.Shape.Size.Height);
+
+            //        pinborder.Stroke = Brushes.Fuchsia;
+            //        pinborder.Opacity = .1;
+            //        pinborder.StrokeThickness = 0.1;
+
+            //        canvas.Children.Add(pinborder);
+
+            //        var newpin = new Rectangle { RadiusX = padRounding, RadiusY = padRounding, Width = pin.Shape.Size.Width, Height = pin.Shape.Size.Height };
+            //        Canvas.SetLeft(newpin, element.Position.X + pin.Position.X - pin.Shape.Size.Width / 2);
+            //        Canvas.SetTop(newpin, element.Position.Y + pin.Position.Y - pin.Shape.Size.Height / 2);
+
+            //        newpin.Stroke = Brushes.Red;
+            //        newpin.Opacity = 1;
+            //        newpin.StrokeThickness = 0.1;
+
+            //        canvas.Children.Add(newpin);
+            //    }
+            //}
+            #endregion
+
+            //#region Name
+            //var name = new TextBlock();
+            //name.Text = element.Name;
+            //name.FontSize = 1;
+            //name.Opacity = .6;
+            //Canvas.SetLeft(name, element.Position.X);
+            //Canvas.SetTop(name, element.Position.Y);
+            //canvas.Children.Add(name);
+            //#endregion
+
+
+            #region Border
+            var border = new DrawingElement(element);
+            Canvas.SetLeft(border, element.Position.X - Constants.IN);
+            Canvas.SetTop(border, element.Position.Y - Constants.IN);
+            border.MouseEnter += (object sender, MouseEventArgs e) =>
+            {
+                ((DrawingElement)sender).Stroke = Brushes.OrangeRed;
+            };
+            border.MouseLeave += (object sender, MouseEventArgs e) =>
+            {
+               ((DrawingElement)sender).Stroke = Brushes.Black;
+            };
+            border.MouseLeftButtonDown += Rect_MouseLeftButtonDown;
+            border.MouseMove += Rect_MouseMove;
+            border.DragEnter += Rect_DragEnter;
+            border.MouseLeftButtonUp += Rect_MouseLeftButtonUp;
             border.Stroke = Brushes.Black;
-            
+            border.StrokeThickness = 0.1;
+
             canvas.Children.Add(border);
+            #endregion
         }
 
         public MainWindow()
@@ -133,16 +242,16 @@ namespace CurvePCB
             //    drPoints.Add(rect);
             //}
 
-            //PathSegmentCollection path_segment_collection = new();
-            //// Create a Path to hold the geometry.
-            //path = new()
-            //{
-            //    // Add a PathGeometry.
-            //    Data = new PathGeometry
-            //    {
-            //        Figures = { new PathFigure { Segments = path_segment_collection, StartPoint = points1[0] } }
-            //    }
-            //};
+            PathSegmentCollection path_segment_collection = new();
+            // Create a Path to hold the geometry.
+            path = new()
+            {
+                // Add a PathGeometry.
+                Data = new PathGeometry
+                {
+                    Figures = { new PathFigure { Segments = path_segment_collection, StartPoint = points1[0] } }
+                }
+            };
 
             //// Add the rest of the points to a PointCollection.
             //PointCollection point_collection = new(points1.Length - 1);
@@ -184,32 +293,32 @@ namespace CurvePCB
                 Canvas.SetTop(source, y_shape);
                 y_canvas = y;
 
-                var pathFigure = ((PathGeometry)path.Data).Figures.FirstOrDefault();
-                if (pathFigure is not null)
-                {
-                    var segment = (PolyBezierSegment)pathFigure.Segments.FirstOrDefault();
+                //var pathFigure = ((PathGeometry)path.Data).Figures.FirstOrDefault();
+                //if (pathFigure is not null)
+                //{
+                //    var segment = (PolyBezierSegment)pathFigure.Segments.FirstOrDefault();
 
-                    Point[] newPointCollection = drPoints.Select(dp => new Point { X = Canvas.GetLeft(dp) + Constants.PointWidth / 2, Y = Canvas.GetTop(dp) + Constants.PointWidth / 2 }).ToArray();
+                //    Point[] newPointCollection = drPoints.Select(dp => new Point { X = Canvas.GetLeft(dp) + Constants.PointWidth / 2, Y = Canvas.GetTop(dp) + Constants.PointWidth / 2 }).ToArray();
 
-                    pathFigure.StartPoint = newPointCollection[0];
+                //    pathFigure.StartPoint = newPointCollection[0];
 
-                    line1.X1 = newPointCollection[0].X;
-                    line1.X2 = newPointCollection[1].X;
+                //    line1.X1 = newPointCollection[0].X;
+                //    line1.X2 = newPointCollection[1].X;
 
-                    line1.Y1 = newPointCollection[0].Y;
-                    line1.Y2 = newPointCollection[1].Y;
+                //    line1.Y1 = newPointCollection[0].Y;
+                //    line1.Y2 = newPointCollection[1].Y;
 
-                    line2.X1 = newPointCollection[2].X;
-                    line2.X2 = newPointCollection[3].X;
+                //    line2.X1 = newPointCollection[2].X;
+                //    line2.X2 = newPointCollection[3].X;
 
-                    line2.Y1 = newPointCollection[2].Y;
-                    line2.Y2 = newPointCollection[3].Y;
+                //    line2.Y1 = newPointCollection[2].Y;
+                //    line2.Y2 = newPointCollection[3].Y;
 
-                    PointCollection point_collection = new(newPointCollection.Length - 1);
-                    for (int i = 1; i < newPointCollection.Length; i++)
-                        point_collection.Add(newPointCollection[i]);
-                    segment.Points = point_collection;
-                }
+                //    PointCollection point_collection = new(newPointCollection.Length - 1);
+                //    for (int i = 1; i < newPointCollection.Length; i++)
+                //        point_collection.Add(newPointCollection[i]);
+                //    segment.Points = point_collection;
+                //}
             }
         }
 

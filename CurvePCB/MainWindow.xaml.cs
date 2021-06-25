@@ -1,9 +1,7 @@
-﻿using CurvePCB;
-using CurvePCB.Lib;
+﻿using CurvePCB.Lib;
 using Svg;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -22,18 +20,12 @@ namespace CurvePCB
         public decimal RadiusX { get; set; }
         public decimal RadiusY { get; set; }
 
-       
-
-        Element _element;
+        public Element _element;
 
         public DrawingElement(Element element)
         {
             _element = element;
             ellipse = new EllipseGeometry();
-
-            //this.Stroke = Brushes.Gray;
-            //this.StrokeThickness = 0.1;
-            //this.Fill = 
         }
 
         EllipseGeometry ellipse;
@@ -52,20 +44,57 @@ namespace CurvePCB
             br.Opacity = 1;
             drawingContext.DrawRectangle(Brushes.Transparent, new Pen(Stroke, 0.1), new Rect(0, 0, _element.Shape.Size.Width, _element.Shape.Size.Height));
 
-            drawingContext.DrawText(new FormattedText(_element.Name, CultureInfo.InvariantCulture, FlowDirection.LeftToRight, new Typeface("Comic Sans"), 3, Brushes.Coral), new Point(0,0));
+            drawingContext.DrawText(new FormattedText(_element.Name, CultureInfo.InvariantCulture, FlowDirection.LeftToRight, new Typeface("Comic Sans"), 3, Brushes.Coral), new Point(0, 0));
 
             #region DrawingPins
             if (_element.Shape.Pins != null)
             {
                 foreach (var pin in _element.Shape.Pins)
                 {
-                   
-                  //  drawingContext.DrawRectangle(Brushes.Transparent, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width - _element.Shape.Size.Width / 2, pin.Position.Y - pin.Shape.Size.Height - _element.Shape.Size.Height / 2, pin.Shape.Size.Width * 2, Height = pin.Shape.Size.Height * 2));
 
-                    drawingContext.DrawRectangle(Brushes.Red, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width/2, pin.Position.Y - pin.Shape.Size.Height / 2, pin.Shape.Size.Width , Height = pin.Shape.Size.Height ));
+                    //  drawingContext.DrawRectangle(Brushes.Transparent, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width - _element.Shape.Size.Width / 2, pin.Position.Y - pin.Shape.Size.Height - _element.Shape.Size.Height / 2, pin.Shape.Size.Width * 2, Height = pin.Shape.Size.Height * 2));
+
+                    drawingContext.DrawRectangle(Brushes.Red, new(Brushes.Fuchsia, 0.1), new Rect(pin.Position.X - pin.Shape.Size.Width / 2, pin.Position.Y - pin.Shape.Size.Height / 2, pin.Shape.Size.Width, Height = pin.Shape.Size.Height));
                 }
             }
             #endregion
+        }
+    }
+
+    public class DrawingNet : System.Windows.Shapes.Shape
+    {
+
+        Net _net;
+        LineGeometry line;
+
+        public DrawingNet(Net met)
+        {
+            _net = met;
+            line = new LineGeometry();
+        }
+
+        protected override Geometry DefiningGeometry
+        {
+            get
+            {
+                return line;
+            }
+        }
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+            if (_net.Connection.Count > 1)
+            {
+                ConnectionPoint begin = _net.Connection[0];
+                foreach (var con in _net.Connection.Skip(1))
+                {
+                    var start = new Point(begin.Element.Position.X + begin.ElementPin.Position.X, begin.Element.Position.Y + begin.ElementPin.Position.Y);
+                    var end = new Point(con.Element.Position.X + con.ElementPin.Position.X, con.Element.Position.Y + con.ElementPin.Position.Y);
+                    drawingContext.DrawLine(new Pen(Stroke, .2), start, end);
+                    if (Stroke == Brushes.OrangeRed)
+                        drawingContext.DrawText(new FormattedText(_net.Name, CultureInfo.InvariantCulture, FlowDirection.LeftToRight, new Typeface("Comic Sans"), 3, Brushes.Coral), end);
+                    begin = con;
+                }
+            }
         }
     }
 
@@ -95,74 +124,50 @@ namespace CurvePCB
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
-        System.Windows.Shapes.Path path;
-        Line line1;
-        Line line2;
 
+        #region Element
         private void DrawElement(Element element)
         {
 
-            #region Shape
-            //if (element.Shape.Pins != null)
-            //{
-            //    foreach (var pin in element.Shape.Pins)
-            //    {
-            //        var pinborder = new DrawingElement { RadiusX = 1, RadiusY = 1, Width = pin.Shape.Size.Width * 2, Height = pin.Shape.Size.Height * 2 };
-            //        Canvas.SetLeft(pinborder, element.Position.X + pin.Position.X - pin.Shape.Size.Width);
-            //        Canvas.SetTop(pinborder, element.Position.Y + pin.Position.Y - pin.Shape.Size.Height);
-
-            //        pinborder.Stroke = Brushes.Fuchsia;
-            //        pinborder.Opacity = .1;
-            //        pinborder.StrokeThickness = 0.1;
-
-            //        canvas.Children.Add(pinborder);
-
-            //        var newpin = new Rectangle { RadiusX = padRounding, RadiusY = padRounding, Width = pin.Shape.Size.Width, Height = pin.Shape.Size.Height };
-            //        Canvas.SetLeft(newpin, element.Position.X + pin.Position.X - pin.Shape.Size.Width / 2);
-            //        Canvas.SetTop(newpin, element.Position.Y + pin.Position.Y - pin.Shape.Size.Height / 2);
-
-            //        newpin.Stroke = Brushes.Red;
-            //        newpin.Opacity = 1;
-            //        newpin.StrokeThickness = 0.1;
-
-            //        canvas.Children.Add(newpin);
-            //    }
-            //}
-            #endregion
-
-            //#region Name
-            //var name = new TextBlock();
-            //name.Text = element.Name;
-            //name.FontSize = 1;
-            //name.Opacity = .6;
-            //Canvas.SetLeft(name, element.Position.X);
-            //Canvas.SetTop(name, element.Position.Y);
-            //canvas.Children.Add(name);
-            //#endregion
-
-
-            #region Border
-            var border = new DrawingElement(element);
-            Canvas.SetLeft(border, element.Position.X - Constants.IN);
-            Canvas.SetTop(border, element.Position.Y - Constants.IN);
-            border.MouseEnter += (object sender, MouseEventArgs e) =>
+            var drawingElement = new DrawingElement(element);
+            Canvas.SetLeft(drawingElement, element.Position.X - Constants.IN);
+            Canvas.SetTop(drawingElement, element.Position.Y - Constants.IN);
+            drawingElement.MouseEnter += (object sender, MouseEventArgs e) =>
             {
                 ((DrawingElement)sender).Stroke = Brushes.OrangeRed;
             };
-            border.MouseLeave += (object sender, MouseEventArgs e) =>
+            drawingElement.MouseLeave += (object sender, MouseEventArgs e) =>
             {
-               ((DrawingElement)sender).Stroke = Brushes.Black;
+                ((DrawingElement)sender).Stroke = Brushes.Black;
             };
-            border.MouseLeftButtonDown += Rect_MouseLeftButtonDown;
-            border.MouseMove += Rect_MouseMove;
-            border.DragEnter += Rect_DragEnter;
-            border.MouseLeftButtonUp += Rect_MouseLeftButtonUp;
-            border.Stroke = Brushes.Black;
-            border.StrokeThickness = 0.1;
+            drawingElement.MouseLeftButtonDown += Rect_MouseLeftButtonDown;
+            drawingElement.MouseMove += Rect_MouseMove;
+            drawingElement.MouseLeftButtonUp += Rect_MouseLeftButtonUp;
+            drawingElement.Stroke = Brushes.Black;
+            drawingElement.StrokeThickness = 0.1;
 
-            canvas.Children.Add(border);
-            #endregion
+            canvas.Children.Add(drawingElement);
         }
+        #endregion
+
+        #region Net
+        private void DrawNet(Net net)
+        {
+            var drawingNet = new DrawingNet(net);
+            Canvas.SetLeft(drawingNet, 0);
+            Canvas.SetTop(drawingNet, 0);
+            drawingNet.Stroke = Brushes.Red;
+            drawingNet.MouseEnter += (object sender, MouseEventArgs e) =>
+            {
+                ((DrawingNet)sender).Stroke = Brushes.OrangeRed;
+            };
+            drawingNet.MouseLeave += (object sender, MouseEventArgs e) =>
+            {
+                ((DrawingNet)sender).Stroke = Brushes.Black;
+            };
+            canvas.Children.Add(drawingNet);
+        }
+        #endregion
 
         public MainWindow()
         {
@@ -172,15 +177,8 @@ namespace CurvePCB
 
             schematic = DemoBoard.Generate();
 
-            ////var offset = new Point(25, 25);
-
-            //elements = new List<IElement> { new LQFP(canvas) };
-
-            foreach (Element el in schematic.Elements)
-            {
-                DrawElement(el);
-                //el.Draw(new Point(Constants.IN * 3, Constants.IN * 6));
-            }
+            schematic.Elements.ForEach(DrawElement);
+            schematic.Nets.ForEach(DrawNet);
 
             //// Canvas.LayoutTransformProperty
 
@@ -244,14 +242,14 @@ namespace CurvePCB
 
             PathSegmentCollection path_segment_collection = new();
             // Create a Path to hold the geometry.
-            path = new()
-            {
-                // Add a PathGeometry.
-                Data = new PathGeometry
-                {
-                    Figures = { new PathFigure { Segments = path_segment_collection, StartPoint = points1[0] } }
-                }
-            };
+            //path = new()
+            //{
+            //    // Add a PathGeometry.
+            //    Data = new PathGeometry
+            //    {
+            //        Figures = { new PathFigure { Segments = path_segment_collection, StartPoint = points1[0] } }
+            //    }
+            //};
 
             //// Add the rest of the points to a PointCollection.
             //PointCollection point_collection = new(points1.Length - 1);
@@ -292,7 +290,14 @@ namespace CurvePCB
                 y_shape += y - y_canvas;
                 Canvas.SetTop(source, y_shape);
                 y_canvas = y;
+                ((DrawingElement)sender)._element.Position.X = x_shape;
 
+                ((DrawingElement)sender)._element.Position.Y = y_shape;
+                canvas.UpdateLayout();
+                foreach (UIElement child in canvas.Children)
+                {
+                    //  child.UpdateLayout();
+                }
                 //var pathFigure = ((PathGeometry)path.Data).Figures.FirstOrDefault();
                 //if (pathFigure is not null)
                 //{
@@ -333,10 +338,6 @@ namespace CurvePCB
             y_canvas = e.GetPosition(canvas).Y;
         }
 
-        private void Rect_DragEnter(object sender, DragEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void DrawGrid()
         {

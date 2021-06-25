@@ -321,7 +321,7 @@ namespace CurvePCB.Lib
     {
         public Element Element { get; set; }
 
-        public int ElementPin { get; set; }
+        public Element ElementPin { get; set; }
     }
 
     public class Net

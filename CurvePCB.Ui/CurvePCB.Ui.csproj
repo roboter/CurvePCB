@@ -3,16 +3,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Svg" Version="3.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Elements\" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CurvePCB.Lib\CurvePCB.Lib.csproj" />

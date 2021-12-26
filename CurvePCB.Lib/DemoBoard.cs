@@ -45,7 +45,15 @@ namespace CurvePCB.Lib
                 lqfpPins.Add(new Element { Name = $"PIN{i + 48}", Shape = new Shape { Name = $"PIN{i + 48}", Size = new Size(qfp64PinWidth, qfp64PinHeight) }, Position = new Position(qfp64ChipFirstPin + (i - 1) * qfp64PinSpacing - qfp64PinWidth / 2, qfp64PinHeight / 2) });
             }
 
-            var u1 = new Element { Name = "U1", Shape = new Shape { Name = "QFP64", Pins = lqfpPins, Size = new Size(qfp64Border, qfp64Border) }, Position = new Position(Constants.IN * 16 + Constants.IN / 2, Constants.IN * 5) };
+            var u1 = new Element
+            {
+                Name = "U1",
+                Shape = new Shape { Name = "QFP64", Pins = lqfpPins, Size = new Size(qfp64Border, qfp64Border) },
+                Position = new Position(Constants.IN * 16 + Constants.IN / 2, Constants.IN * 5),
+                //Transform = 45,
+                //CenterX = qfp64Border / 2,
+                //CenterY = qfp64Border / 2,
+            };
             var j1 = new Element { Name = "J1", Shape = connector, Position = new Position(Constants.IN * 2, Constants.IN * 1) };
             var j2 = new Element { Name = "J2", Shape = connector, Position = new Position(Constants.IN * 2, Constants.IN * 12) };
 

@@ -375,6 +375,9 @@ namespace CurvePCB.Lib
         public Shape Shape { get; set; }
 
         public Position Position { get; set; }
+        public double Transform { get; set; }
+        public double CenterY { get; set; }
+        public double CenterX { get; set; }
     }
 
     public class Shape
@@ -383,7 +386,7 @@ namespace CurvePCB.Lib
 
         public string Name { get; set; }
 
-        public int PinsCount { get; }
+        public int PinsCount { get; set; }
 
         public IList<Element> Pins { get; set; }
     }

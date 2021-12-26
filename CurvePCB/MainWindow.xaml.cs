@@ -14,7 +14,6 @@ using System.Windows.Shapes;
 
 namespace CurvePCB
 {
-
     public class DrawingElement : System.Windows.Shapes.Shape
     {
         public decimal RadiusX { get; set; }
@@ -67,9 +66,9 @@ namespace CurvePCB
         Net _net;
         LineGeometry line;
 
-        public DrawingNet(Net met)
+        public DrawingNet(Net net)
         {
-            _net = met;
+            _net = net;
             line = new LineGeometry();
         }
 
@@ -82,11 +81,21 @@ namespace CurvePCB
         }
         protected override void OnRender(DrawingContext drawingContext)
         {
+          //  if (_net.Connection.Count < 2) return;
+
+            var beginConnection = _net.Connection.First();
+
+           // drawingContext.DrawRectangle(Brushes.Red, new Pen(Stroke, 0.1), new Rect(beginConnection.Element.Position.X, beginConnection.Element.Position.Y,1,1));
+
+            //   drawingContext.DrawRectangle(Brushes.Red, new Pen(Stroke, 0.1), new Rect(-0.1, -0.1, 2, 2));
+
             if (_net.Connection.Count > 1)
             {
                 ConnectionPoint begin = _net.Connection[0];
                 foreach (var con in _net.Connection.Skip(1))
                 {
+                    //var len = 0.00001;
+                    //drawingContext.DrawRectangle(Brushes.Red, new(Brushes.Fuchsia, 0.1), new Rect(con.Element.Position.X - len, con.Element.Position.X + len, con.Element.Position.Y - len, con.Element.Position.Y + len));
                     var start = new Point(begin.Element.Position.X + begin.ElementPin.Position.X, begin.Element.Position.Y + begin.ElementPin.Position.Y);
                     var end = new Point(con.Element.Position.X + con.ElementPin.Position.X, con.Element.Position.Y + con.ElementPin.Position.Y);
                     drawingContext.DrawLine(new Pen(Stroke, .2), start, end);
@@ -121,6 +130,7 @@ namespace CurvePCB
             new Point(Constants.IN * 8, Constants.IN * 4),
             new Point(Constants.IN * 10, Constants.IN * 5)
         };
+
         bool captured = false;
         double x_shape, x_canvas, y_shape, y_canvas;
         UIElement source = null;
@@ -130,8 +140,11 @@ namespace CurvePCB
         {
 
             var drawingElement = new DrawingElement(element);
-            Canvas.SetLeft(drawingElement, element.Position.X - Constants.IN);
-            Canvas.SetTop(drawingElement, element.Position.Y - Constants.IN);
+            Canvas.SetLeft(drawingElement, element.Position.X);
+            Canvas.SetTop(drawingElement, element.Position.Y);
+            if(element.Transform > 0)
+                drawingElement.RenderTransform = new RotateTransform(element.Transform, element.CenterX, element.CenterY);
+            //Canvas.LayoutTransformProperty(drawingElement, RotateTransform)
             drawingElement.MouseEnter += (object sender, MouseEventArgs e) =>
             {
                 ((DrawingElement)sender).Stroke = Brushes.OrangeRed;
@@ -375,14 +388,14 @@ namespace CurvePCB
             {
                 foreach (var element in elements)
                 {
-                    //            element.Move(new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y));
+                    // element.Move(new Point(e.GetPosition(canvas).X, e.GetPosition(canvas).Y));
                 }
             }
         }
 
         private void canvas_MouseLeave(object sender, MouseEventArgs e)
         {
-            //  label1.Content = "X,Y:";
+            // label1.Content = "X,Y:";
         }
 
         private void Open_Click(object sender, RoutedEventArgs e)

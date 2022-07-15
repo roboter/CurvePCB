@@ -18,13 +18,10 @@ namespace CurvePCB.Ui
 {
     public class FancyCurve : Shape
     {
-
         public FancyCurve(Canvas canvas, List<FancyCurvePoint> Points)
         {
             ellipse = new EllipseGeometry();
-
-
-            canvas.Children.Add(this);
+          
             this.IsMouseDirectlyOverChanged += (o, e) =>
             {
                 this.InvalidateVisual();
@@ -45,7 +42,7 @@ namespace CurvePCB.Ui
                     this.InvalidateVisual();
                 };
             }
-
+            canvas.Children.Add(this);
         }
 
         private readonly EllipseGeometry ellipse;
@@ -69,7 +66,6 @@ namespace CurvePCB.Ui
 
         protected override void OnRender(DrawingContext drawingContext)
         {
-            base.OnRender(drawingContext);
             //foreach (var point in Points)
             //{
             //    point.OnRender(drawingContext);
@@ -114,9 +110,8 @@ namespace CurvePCB.Ui
                 // Add the PolyBezierSegment to othe segment collection.
                 path_segment_collection.Add(bezier_segment);
 
-                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(Brushes.Yellow, IsMouseDirectlyOver ? 2 : 1), path);
-
-
+                //new Pen(IsMouseDirectlyOver ? Brushes.bl: Brushes.Yellow, IsMouseDirectlyOver ? 2 : 1)
+                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(Brushes.Yellow, 1), path);
             }
         }
     }
@@ -132,8 +127,10 @@ namespace CurvePCB.Ui
         {
             //  canvas.Children.Add(this);
             ellipse = new EllipseGeometry();
-            Center = new FancyPoint(canvas, center);
-            Center.brush = Brushes.DarkSlateBlue;
+            Center = new FancyPoint(canvas, center)
+            {
+                brush = IsMouseOver ? Brushes.Red : Brushes.DarkSlateBlue
+            };
             canvas.Children.Add(Center);
             this.IsMouseDirectlyOverChanged += (o, e) =>
             {
@@ -156,9 +153,8 @@ namespace CurvePCB.Ui
                 {
                     HandleB.point = new Point(HandleB.point.X + p.X - old.X, HandleB.point.Y + p.Y - old.Y);
                     Update?.Invoke();
-                    //HandleB.InvalidateVisual();
+                    HandleB.InvalidateVisual();
                     this.InvalidateVisual();
-
                 }
             };
 
@@ -171,7 +167,6 @@ namespace CurvePCB.Ui
                     Update?.Invoke();
                     this.InvalidateVisual();
                 };
-
             }
 
             if (handleB.HasValue)
@@ -198,12 +193,12 @@ namespace CurvePCB.Ui
                     HandleA.InvalidateVisual();
                 };
             }
-
         }
 
         private readonly EllipseGeometry ellipse;
 
         protected override Geometry DefiningGeometry => ellipse;
+
         public bool Linked { get; set; }
 
         public FancyPoint Center { get; set; }
@@ -245,14 +240,10 @@ namespace CurvePCB.Ui
 
         protected override void OnRender(DrawingContext drawingContext)
         {
-            Debug.WriteLine("FancyCurvePoint Render");
+            // Debug.WriteLine("FancyCurvePoint Render");
             base.OnRender(drawingContext);
-            var br = new SolidColorBrush();
-            br.Color = Colors.LightSeaGreen;
-            var dotSize = new Size(Constants.IN * 4, Constants.IN * 4);
-            br.Opacity = IsMouseDirectlyOver ? 1 : 0.1;
 
-            var pen = IsMouseDirectlyOver ? new Pen(Brushes.White, 3) : new Pen(Brushes.White, 1);
+            var pen = new Pen(Brushes.White, 1);
             if (HandleA != null)
             {
                 drawingContext.DrawLine(pen, Center.point, HandleA.point);
@@ -261,7 +252,6 @@ namespace CurvePCB.Ui
             {
                 drawingContext.DrawLine(pen, Center.point, HandleB.point);
             }
-//            drawingContext.DrawRectangle(br, new Pen(Stroke, 15), new Rect(Center.point, dotSize));
         }
     }
 
@@ -279,6 +269,7 @@ namespace CurvePCB.Ui
 
             this.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) =>
             {
+                Debug.WriteLine("FancyPoint IsMouseDirectlyOverChanged: ", IsMouseDirectlyOver);
                 this.InvalidateVisual();
             };
 
@@ -289,6 +280,7 @@ namespace CurvePCB.Ui
                 element.CaptureMouse();
                 this.InvalidateVisual();
             };
+
             this.MouseMove += (object sender, MouseEventArgs e) =>
             {
                 if (dragStart != null && e.LeftButton == MouseButtonState.Pressed)
@@ -299,7 +291,6 @@ namespace CurvePCB.Ui
                     element.point = position;
                     this.InvalidateVisual();
                     Update?.Invoke();
-
                 }
             };
 
@@ -310,6 +301,9 @@ namespace CurvePCB.Ui
                 element.ReleaseMouseCapture();
                 this.InvalidateVisual();
             };
+           
+            //Update?.Invoke();
+            //this.InvalidateVisual();
         }
 
         private readonly EllipseGeometry ellipse;
@@ -321,17 +315,16 @@ namespace CurvePCB.Ui
         protected override Geometry DefiningGeometry => ellipse;
 
         public Action<Point, Point> ChangePosition { get; internal set; }
+
         public Action Update { get; internal set; }
 
         protected override void OnRender(DrawingContext drawingContext)
         {
-            base.OnRender(drawingContext);
-
-            var br = new SolidColorBrush();
-            br.Opacity = IsMouseDirectlyOver ? 1 : 0.5;
+            //    var br = new SolidColorBrush();
+            //  //  br.Opacity = IsMouseDirectlyOver ? 1 : 0.5;
             var dotSize = new Size(Constants.IN * 4, Constants.IN * 4);
-
-            drawingContext.DrawRectangle(brush, new Pen(Stroke, 0.1), new Rect(point, dotSize));
+            var drawBrush = IsMouseDirectlyOver ? Brushes.Gray : brush;
+            drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.1), new Rect(new Point(point.X - dotSize.Width / 2, point.Y - dotSize.Height / 2), dotSize));
         }
     }
 
@@ -347,10 +340,20 @@ namespace CurvePCB.Ui
             new FancyCurve(canvas,
              new List<FancyCurvePoint> {
                     new FancyCurvePoint(canvas, center: new Point(Constants.IN, Constants.IN), handleA: new Point(Constants.IN * 20, Constants.IN)),
-                    new FancyCurvePoint(canvas, center: new Point(Constants.IN * 100, Constants.IN * 30), handleA: new Point(Constants.IN * 20, Constants.IN * 20), handleB: new Point(Constants.IN * 21, Constants.IN * 25)),
+                    //With 2 wings
+                    new FancyCurvePoint(canvas, center: new Point(Constants.IN * 100, Constants.IN * 30), // Center 
+                    handleA: new Point(  Constants.IN * 100 - Constants.IN * 20, Constants.IN * 30 -  Constants.IN * 20),
+                    handleB: new Point(Constants.IN * 20 + Constants.IN * 100, Constants.IN * 20 + Constants.IN * 30)),
                     new FancyCurvePoint(canvas, center: new Point(Constants.IN * 100, Constants.IN * 200), handleB: new Point(Constants.IN * 200, Constants.IN * 170))
                 }
             );
         }
+    }
+
+    public class PCBElement : Shape
+    {
+        public Canvas canvas { get; set; }
+
+        protected override Geometry DefiningGeometry => throw new NotImplementedException();
     }
 }

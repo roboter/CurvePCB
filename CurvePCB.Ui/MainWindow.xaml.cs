@@ -3,16 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CurvePCB.Ui
@@ -23,18 +17,20 @@ namespace CurvePCB.Ui
 
         public Point? HandleA { get; set; }
 
-
         public Point? HandleB { get; set; }
     }
 
     public class FancyCurve : Shape
     {
-
         private readonly EllipseGeometry ellipse;
 
         public bool Selected { get; set; }
 
         protected override Geometry DefiningGeometry => ellipse;
+
+        public Brush LineColor { get; set; } = Brushes.Yellow;
+
+        public Brush LineColorOver { get; set; } = Brushes.Honeydew;
 
         public List<FancyCurvePoint> Points { get; set; } = new List<FancyCurvePoint>();
 
@@ -43,31 +39,20 @@ namespace CurvePCB.Ui
             ellipse = new EllipseGeometry();
 
             canvas.Children.Add(this);
-            //   new FancyCurveCore(canvas, points);
 
             foreach (var pointPos in pointsPos)
             {
                 var point = new FancyCurvePoint(canvas, pointPos.Center, pointPos.HandleA, pointPos.HandleB);
-
-                //this.MouseMove += (o, e) =>
-                //{
-                //    this.InvalidateVisual();
-                //};
-
-
-                //foreach (var point in points)
-                // {
-                //    canvas.Children.Add(point);
-                point.Update += () =>
-                {
-                    this.InvalidateVisual();
-                };
-                //  }
+                point.Update += () => { this.InvalidateVisual(); };
                 Points.Add(point);
             }
 
+            this.IsMouseDirectlyOverChanged += (o, e) =>
+            {
+                Debug.WriteLine("FancyCurve IsMouseDirectlyOverChanged: ", IsMouseDirectlyOver);
+                this.InvalidateVisual();
+            };
         }
-
 
         public List<Point> GetPoints()
         {
@@ -82,14 +67,6 @@ namespace CurvePCB.Ui
 
         protected override void OnRender(DrawingContext drawingContext)
         {
-            //foreach (var point in Points)
-            //{
-            //    point.OnRender(drawingContext);
-            //}
-
-            //var br = new SolidColorBrush();
-            //br.Opacity = 1;
-            //drawingContext.DrawRectangle(Brushes.OrangeRed, new Pen(Stroke, 0.1), new Rect(0, 0, Constants.IN * 2, Constants.IN * 2));
             var points = GetPoints();
             if (Points.Count > 1)
             {
@@ -100,14 +77,15 @@ namespace CurvePCB.Ui
                 }
                 var path = new PathGeometry();
 
-                var path_figure = new PathFigure();
+                var path_figure = new PathFigure { IsFilled = false, };
+
                 path.Figures.Add(path_figure);
 
                 // Start at the first point.
                 path_figure.StartPoint = points[0];
 
                 // Create a PathSegmentCollection.
-                var path_segment_collection = new PathSegmentCollection();
+                var path_segment_collection = new PathSegmentCollection { };
                 path_figure.Segments = path_segment_collection;
 
                 // Add the rest of the points to a PointCollection.
@@ -117,16 +95,13 @@ namespace CurvePCB.Ui
                     point_collection.Add(points[i]);
                 }
                 // Make a PolyBezierSegment from the points.
-                var bezier_segment = new PolyBezierSegment
-                {
-                    Points = point_collection
-                };
+                var bezier_segment = new PolyBezierSegment { Points = point_collection, IsSmoothJoin = true, IsStroked = true, };
 
                 // Add the PolyBezierSegment to othe segment collection.
                 path_segment_collection.Add(bezier_segment);
 
                 //new Pen(IsMouseDirectlyOver ? Brushes.bl: Brushes.Yellow, IsMouseDirectlyOver ? 2 : 1)
-                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(Brushes.Yellow, 1), path);
+                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(IsMouseDirectlyOver ? LineColorOver : LineColor, 2), path);
             }
         }
     }
@@ -140,7 +115,7 @@ namespace CurvePCB.Ui
 
         public FancyCurvePoint(Canvas canvas, Point center, Point? handleA = null, Point? handleB = null)
         {
-             canvas.Children.Add(this);
+            canvas.Children.Add(this);
             ellipse = new EllipseGeometry();
             Center = new FancyPoint(canvas, center)
             {
@@ -294,12 +269,6 @@ namespace CurvePCB.Ui
             ellipse = new EllipseGeometry();
             this.point = point;
 
-            //this.IsMouseOver += (object sender, DependencyPropertyChangedEventArgs e) =>
-            //{
-            //    Debug.WriteLine("FancyPoint IsMouseDirectlyOverChanged: ", IsMouseDirectlyOver);
-            //    this.InvalidateVisual();
-            //};
-
             this.MouseDown += (object sender, MouseButtonEventArgs e) =>
             {
                 var element = (Shape)sender;
@@ -354,21 +323,20 @@ namespace CurvePCB.Ui
 
             new PCBGrid(canvas);
 
-            new PCBElement(canvas, new Point(0, 0));
+            new PCBElement(canvas, new Point(20, 100));
 
             new FancyCurve(canvas,
              new FancyCurvePointPos[] {
                     new FancyCurvePointPos{ Center =  new Point(Constants.IN, Constants.IN), HandleA = new Point(Constants.IN * 20, Constants.IN) },
                     //With 2 wings
                     new FancyCurvePointPos{ Center =  new Point(Constants.IN * 100, Constants.IN * 30), // Center 
-                    HandleA= new Point(  Constants.IN * 100 - Constants.IN * 20, Constants.IN * 30 -  Constants.IN * 20),
-                    HandleB=new Point(Constants.IN * 20 + Constants.IN * 100, Constants.IN * 20 + Constants.IN * 30) },
-                    new FancyCurvePointPos{Center=  new Point(Constants.IN * 100, Constants.IN * 200), HandleB= new Point(Constants.IN * 200, Constants.IN * 170) }
+                    HandleA = new Point(Constants.IN * 100 - Constants.IN * 20, Constants.IN * 30 -  Constants.IN * 20),
+                    HandleB = new Point(Constants.IN * 20 + Constants.IN * 100, Constants.IN * 20 + Constants.IN * 30) },
+                    new FancyCurvePointPos{Center = new Point(Constants.IN * 100, Constants.IN * 200), HandleB = new Point(Constants.IN * 200, Constants.IN * 170) }
                 }
             );
         }
     }
-
 
     public class PCBGrid : Shape
     {
@@ -414,10 +382,17 @@ namespace CurvePCB.Ui
         }
     }
 
+    public class Pin
+    {
+        public double Size { get; set; } = 0.8; // metal part
+
+        //between pins 2.54
+
+    }
 
     public class MovableShape : Shape
     {
-        public Canvas canvas { get; set; }
+        public Canvas Canvas { get; set; }
 
         protected override Geometry DefiningGeometry => ellipse;
 
@@ -425,40 +400,44 @@ namespace CurvePCB.Ui
 
         public Point point { get; set; }
 
-        public Point? dragStart;
+        public Point dragStart;
 
         public MovableShape(Canvas canvas, Point point)
         {
-            this.canvas = canvas;
+            this.Canvas = canvas;
             ellipse = new EllipseGeometry();
             this.point = point;
             canvas.Children.Add(this);
 
             this.MouseDown += (object sender, MouseButtonEventArgs e) =>
             {
-                var element = (Shape)sender;
-                dragStart = e.GetPosition(element);
+                var element = (MovableShape)sender;
+                Point c = e.GetPosition(element);
+                Point elementAt = e.GetPosition(element);
+                c.Offset(-element.point.X, -element.point.Y);
+
+                dragStart = c;
+                Debug.WriteLine($"Point:{element.point.X} {element.point.Y} elementAt: {elementAt.X} {elementAt.Y} ");
                 element.CaptureMouse();
                 this.InvalidateVisual();
             };
 
             this.MouseMove += (object sender, MouseEventArgs e) =>
             {
-                if (dragStart != null && e.LeftButton == MouseButtonState.Pressed)
+                if ( e.LeftButton == MouseButtonState.Pressed)
                 {
                     var element = (MovableShape)sender;
-                    var position = e.GetPosition(element);
-                    //     ChangePosition?.Invoke(element.point, position);
+                    var position =  e.GetPosition(element);
+
+                    position.Offset(-dragStart.X, -dragStart.Y);
                     element.point = position;
                     this.InvalidateVisual();
-                    //    Update?.Invoke();
                 }
             };
 
             this.MouseUp += (object sender, MouseButtonEventArgs e) =>
             {
                 var element = (Shape)sender;
-                dragStart = null;
                 element.ReleaseMouseCapture();
                 this.InvalidateVisual();
             };

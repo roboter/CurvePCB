@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Lib", "CurvePCB.Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Ui", "CurvePCB.Ui\CurvePCB.Ui.csproj", "{C14FFC0B-4B1C-4574-94BF-1D3D536DB0EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Maui", "CurvePCB.Maui\CurvePCB.Maui.csproj", "{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C14FFC0B-4B1C-4574-94BF-1D3D536DB0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C14FFC0B-4B1C-4574-94BF-1D3D536DB0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C14FFC0B-4B1C-4574-94BF-1D3D536DB0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

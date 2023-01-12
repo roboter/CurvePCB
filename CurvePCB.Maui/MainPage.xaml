@@ -6,10 +6,11 @@
     <ContentPage.Resources>
         <drawable:MyGraphicsDrawable x:Key="drawable" x:Name="drawable" />
     </ContentPage.Resources>
-    <GraphicsView Drawable="{StaticResource drawable}"
-                  x:Name="MainGraphicsView"
-                  DragInteraction="MainGraphicsView_DragInteraction">
+    <GraphicsView BackgroundColor="AliceBlue" Drawable="{StaticResource drawable}"
+                x:Name="MainGraphicsView"
+                  StartInteraction="MainGraphicsView_StartInteraction"
+                  EndInteraction="MainGraphicsView_EndInteraction"
+                DragInteraction="MainGraphicsView_DragInteraction">
     </GraphicsView>
-
 </ContentPage>
 

@@ -12,7 +12,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <!--MouseUp="canvas_MouseUp" MouseLeave="canvas_MouseLeave" MouseMove="canvas_MouseMove"-->
-        <Canvas x:Name="canvas" Background="#FF80947F" >
+        <Canvas x:Name="canvas" Background="#FF80947F" Grid.RowSpan="2" >
         </Canvas>
        
     </Grid>

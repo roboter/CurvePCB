@@ -100,7 +100,7 @@ namespace CurvePCB.Ui
                 path_segment_collection.Add(bezier_segment);
 
                 //new Pen(IsMouseDirectlyOver ? Brushes.bl: Brushes.Yellow, IsMouseDirectlyOver ? 2 : 1)
-                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(IsMouseDirectlyOver ? LineColorOver : LineColor, 2), path);
+                drawingContext.DrawGeometry(Brushes.Transparent, new Pen(IsMouseDirectlyOver ? LineColorOver : LineColor, 0.02), path);
             }
         }
     }
@@ -232,7 +232,7 @@ namespace CurvePCB.Ui
             // Debug.WriteLine("FancyCurvePoint Render");
             base.OnRender(drawingContext);
 
-            var pen = new Pen(Brushes.White, 1);
+            var pen = new Pen(Brushes.White, 0.1);
             if (HandleA != null)
             {
                 drawingContext.DrawLine(pen, Center.point, HandleA.point);
@@ -305,9 +305,9 @@ namespace CurvePCB.Ui
         {
             //    var br = new SolidColorBrush();
             //  //  br.Opacity = IsMouseDirectlyOver ? 1 : 0.5;
-            var dotSize = new Size(Constants.IN * 4, Constants.IN * 4);
+            var dotSize = new Size(0.24, 0.24);
             var drawBrush = IsMouseDirectlyOver ? Brushes.Gray : brush;
-            drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.1), new Rect(new Point(point.X - dotSize.Width / 2, point.Y - dotSize.Height / 2), dotSize));
+            drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.001), new Rect(new Point(point.X - dotSize.Width / 2, point.Y - dotSize.Height / 2), dotSize));
         }
     }
 
@@ -316,24 +316,59 @@ namespace CurvePCB.Ui
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int Zoom { get; set; }
         public MainWindow()
         {
             InitializeComponent();
 
             new PCBGrid(canvas);
 
-            new PCBElement(canvas, new Point(20, 100));
+            var soc = new PCBElement(canvas, new Point(0, 0), new Size { Width = 5, Height = 6 });
+
+            var padWidth = 0.5;
+
+            var padHeight = 1.0;
+
+            var firstLegPos = 0.595 - 0.2;
+
+            var nextLeg = 1.27;
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos, Y = 4.3, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg, Y = 4.3, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg * 2, Y = 4.3, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg * 3, Y = 4.3, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos, Y = 0, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg, Y = 0, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg * 2, Y = 0, Width = padWidth, Height = padHeight } });
+
+            soc.pads.Add(new Pad { bounds = new Rect { X = firstLegPos + nextLeg * 3, Y = 0, Width = padWidth, Height = padHeight } });
+
+
+            new PCBElement(canvas, new Point(5, 100));
 
             new FancyCurve(canvas,
              new FancyCurvePointPos[] {
-                    new FancyCurvePointPos{ Center =  new Point(Constants.IN, Constants.IN), HandleA = new Point(Constants.IN * 20, Constants.IN) },
+                    new FancyCurvePointPos{ Center =  new Point(Constants.IN, Constants.IN), HandleA = new Point(Constants.IN , Constants.IN) },
                     //With 2 wings
-                    new FancyCurvePointPos{ Center =  new Point(Constants.IN * 100, Constants.IN * 30), // Center 
-                    HandleA = new Point(Constants.IN * 100 - Constants.IN * 20, Constants.IN * 30 -  Constants.IN * 20),
-                    HandleB = new Point(Constants.IN * 20 + Constants.IN * 100, Constants.IN * 20 + Constants.IN * 30) },
-                    new FancyCurvePointPos{Center = new Point(Constants.IN * 100, Constants.IN * 200), HandleB = new Point(Constants.IN * 200, Constants.IN * 170) }
+                    new FancyCurvePointPos{ Center =  new Point(Constants.IN * 10, Constants.IN ), // Center 
+                    HandleA = new Point(Constants.IN * 10 - Constants.IN * 2, Constants.IN  -  Constants.IN ),
+                    HandleB = new Point(Constants.IN * 2 + Constants.IN * 10, Constants.IN * 2 + Constants.IN) },
+                    new FancyCurvePointPos{Center = new Point(Constants.IN * 10, Constants.IN * 20), HandleB = new Point(Constants.IN * 20, Constants.IN * 17) }
                 }
             );
+        }
+
+        private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            Zoom += e.Delta / 100;
+            canvas.LayoutTransform = new ScaleTransform(Zoom, Zoom);
+            Debug.WriteLine(e.Delta);
         }
     }
 
@@ -356,38 +391,68 @@ namespace CurvePCB.Ui
         {
             //    var br = new SolidColorBrush();
             //  //  br.Opacity = IsMouseDirectlyOver ? 1 : 0.5;
-            var dotSize = new Size(1, 1);
+            var dotSize = new Size(0.01, 0.01);
             var drawBrush = IsMouseDirectlyOver ? Brushes.Gray : Brushes.RosyBrown;
-            for (double i = 0; i < 1000 * Constants.IN; i = i + Constants.IN * 10)
-                for (double j = 0; j < 1000 * Constants.IN; j = j + Constants.IN * 10)
-                    drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.1), new Rect(new Point(i, j), dotSize));
+            for (double i = 0; i < 1000 * Constants.IN*10; i += Constants.IN )
+                for (double j = 0; j < 1000 * Constants.IN * 10; j += Constants.IN)
+                   // drawingContext.draw
+                    drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.001), new Rect(new Point(i, j), dotSize));
         }
+    }
+
+    public class Pad
+    {
+        public Rect bounds { get; set; }
     }
 
     public class PCBElement : MovableShape
     {
+        private Rect bounds;
+        public IList<Pad> pads = new List<Pad>();
+
         public PCBElement(Canvas canvas, Point point) : base(canvas, point)
         {
         }
 
+        public PCBElement(Canvas canvas, Point point, Size bounds) : base(canvas, point)
+        {
+            this.bounds = new Rect(bounds);
+        }
+
         protected override void OnRender(DrawingContext drawingContext)
         {
-            //    var br = new SolidColorBrush();
-            //  //  br.Opacity = IsMouseDirectlyOver ? 1 : 0.5;
-            var dotSize = new Size(Constants.IN * 8, Constants.IN * 8);
+
+            var boundaBrush = new SolidColorBrush
+            {
+                Opacity = IsMouseDirectlyOver ? 1 : 0.5
+            };
+            Pen pen1 = new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.01);
+            pen1.DashStyle = DashStyles.DashDotDot;
+            drawingContext.DrawRectangle(boundaBrush, pen1, new Rect { X = point.X, Y = point.Y, Height = bounds.Height, Width = bounds.Width });
+
             var drawBrush = IsMouseDirectlyOver ? Brushes.Gray : Brushes.RosyBrown;
-            for (double i = 0; i < 100 * Constants.IN; i = i + Constants.IN * 10)
-                drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.1), new Rect(new Point(point.X - dotSize.Width / 2, point.Y + i - dotSize.Height / 2), dotSize));
+            var pen = new Pen(IsMouseDirectlyOver ? Brushes.Yellow : Brushes.Salmon, 0.05);
+            foreach (var pad in pads)
+            {
+                drawingContext.DrawRectangle(drawBrush, pen, new Rect { X = pad.bounds.X + point.X, Y = pad.bounds.Y + point.Y, Height = pad.bounds.Height, Width = pad.bounds.Width });
+                //drawingContext.DrawRectangle(drawBrush, , new Rect(new Point(point.X + pad.bounds.X, point.Y + pad.bounds.Y), new Point { X = point.X + pad.bounds.Width, Y = point.Y + pad.bounds.Height }));
+            }
+
+
+            //var dotSize = new Size(Constants.IN * 8, Constants.IN * 8);
+            //
+            //for (double i = 0; i < 100 * Constants.IN; i += Constants.IN * 10)
+            //    drawingContext.DrawRectangle(drawBrush, new Pen(IsMouseDirectlyOver ? Brushes.Green : Brushes.Red, 0.1), new Rect(new Point(point.X - dotSize.Width / 2, point.Y + i - dotSize.Height / 2), dotSize));
         }
     }
 
-    public class Pin
-    {
-        public double Size { get; set; } = 0.8; // metal part
+    //public class Pin
+    //{
+    //    public double Size { get; set; } = 0.8; // metal part
 
-        //between pins 2.54
+    //    //between pins 2.54
 
-    }
+    //}
 
     public class MovableShape : Shape
     {
@@ -423,10 +488,10 @@ namespace CurvePCB.Ui
 
             this.MouseMove += (object sender, MouseEventArgs e) =>
             {
-                if ( e.LeftButton == MouseButtonState.Pressed)
+                if (e.LeftButton == MouseButtonState.Pressed)
                 {
                     var element = (MovableShape)sender;
-                    var position =  e.GetPosition(element);
+                    var position = e.GetPosition(element);
 
                     position.Offset(-dragStart.X, -dragStart.Y);
                     element.point = position;

@@ -16,7 +16,7 @@ namespace CurvePCB.Test
             var connectionPoint = new ConnectionPoint
             {
                 Element = u1,
-                ElementPin = 1
+              //  ElementPin = 1
             };
 
             var net = new Net
@@ -52,32 +52,32 @@ namespace CurvePCB.Test
             var j2 = new Element { Name = "J2", Shape = connector };
 
             var nets = new List<Net>();
-            for (int i = 1; i != 17; i++)
-            {
-                nets.Add(new Net
-                {
-                    Name = $"U1_Pin{i}",
-                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i }, new ConnectionPoint { Element = j1, ElementPin = i } }
-                });
+            //for (int i = 1; i != 17; i++)
+            //{
+            //    nets.Add(new Net
+            //    {
+            //        Name = $"U1_Pin{i}",
+            //        Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i }, new ConnectionPoint { Element = j1, ElementPin = i } }
+            //    });
 
-                nets.Add(new Net
-                {
-                    Name = $"U1_Pin{i + 16}",
-                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 }, new ConnectionPoint { Element = j1, ElementPin = i + 16 } }
-                });
+            //    nets.Add(new Net
+            //    {
+            //        Name = $"U1_Pin{i + 16}",
+            //        Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 }, new ConnectionPoint { Element = j1, ElementPin = i + 16 } }
+            //    });
 
-                nets.Add(new Net
-                {
-                    Name = $"U1_Pin{i + 16 * 2}",
-                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 2 }, new ConnectionPoint { Element = j2, ElementPin = i } }
-                });
+            //    nets.Add(new Net
+            //    {
+            //        Name = $"U1_Pin{i + 16 * 2}",
+            //        Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 2 }, new ConnectionPoint { Element = j2, ElementPin = i } }
+            //    });
 
-                nets.Add(new Net
-                {
-                    Name = $"U1_Pin{i + 16 * 3}",
-                    Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 3 }, new ConnectionPoint { Element = j2, ElementPin = i + 16 } }
-                });
-            }
+            //    nets.Add(new Net
+            //    {
+            //        Name = $"U1_Pin{i + 16 * 3}",
+            //        Connection = new List<ConnectionPoint> { new ConnectionPoint { Element = u1, ElementPin = i + 16 * 3 }, new ConnectionPoint { Element = j2, ElementPin = i + 16 } }
+            //    });
+            //}
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {

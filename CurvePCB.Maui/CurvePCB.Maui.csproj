@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios16.1;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-ios16.1;net7.0-maccatalyst;net7.0-android33.0</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -28,6 +28,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
@@ -61,6 +62,23 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Resources\Images\**" />
+	  <Compile Remove="Resources\Raw\**" />
+	  <Compile Remove="Resources\Splash\**" />
+	  <EmbeddedResource Remove="Resources\Images\**" />
+	  <EmbeddedResource Remove="Resources\Raw\**" />
+	  <EmbeddedResource Remove="Resources\Splash\**" />
+	  <MauiCss Remove="Resources\Images\**" />
+	  <MauiCss Remove="Resources\Raw\**" />
+	  <MauiCss Remove="Resources\Splash\**" />
+	  <MauiXaml Remove="Resources\Images\**" />
+	  <MauiXaml Remove="Resources\Raw\**" />
+	  <MauiXaml Remove="Resources\Splash\**" />
+	  <None Remove="Resources\Images\**" />
+	  <None Remove="Resources\Raw\**" />
+	  <None Remove="Resources\Splash\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
@@ -71,11 +89,6 @@
 	  <None Remove="Resources\Images\" />
 	  <None Remove="Resources\Splash\" />
 	  <None Remove="Microsoft.Maui.Graphics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Splash\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="Microsoft.Maui.Graphics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />

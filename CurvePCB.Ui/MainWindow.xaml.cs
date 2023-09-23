@@ -42,14 +42,14 @@ namespace CurvePCB.Ui
             foreach (var pointPos in pointsPos)
             {
                 var point = new FancyCurvePoint(canvas, pointPos.Center, pointPos.HandleA, pointPos.HandleB);
-                point.Update += () => { this.InvalidateVisual(); };
+                point.Update += InvalidateVisual;
                 Points.Add(point);
             }
 
-            this.IsMouseDirectlyOverChanged += (o, e) =>
+            IsMouseDirectlyOverChanged += (o, e) =>
             {
                 Debug.WriteLine("FancyCurve IsMouseDirectlyOverChanged: ", IsMouseDirectlyOver);
-                this.InvalidateVisual();
+                InvalidateVisual();
             };
         }
 

@@ -13,15 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Ui", "CurvePCB.Ui\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Maui", "CurvePCB.Maui\CurvePCB.Maui.csproj", "{4CED9CA4-261E-4C0B-83A5-5C6183BF94CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Avalonia.UI", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.csproj", "{27BC1360-CADB-4911-A116-8CBDFC99C76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.csproj", "{27BC1360-CADB-4911-A116-8CBDFC99C76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Avalonia.UI.Android", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Android\CurvePCB.Avalonia.UI.Android.csproj", "{4E8E8EB2-54FF-4D77-BADD-B302C7440FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.Android", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Android\CurvePCB.Avalonia.UI.Android.csproj", "{4E8E8EB2-54FF-4D77-BADD-B302C7440FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Avalonia.UI.Desktop", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Desktop\CurvePCB.Avalonia.UI.Desktop.csproj", "{7DFC9250-5B08-4893-A78B-DE6D999C7E82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.Desktop", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Desktop\CurvePCB.Avalonia.UI.Desktop.csproj", "{7DFC9250-5B08-4893-A78B-DE6D999C7E82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Avalonia.UI.iOS", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.iOS\CurvePCB.Avalonia.UI.iOS.csproj", "{44091DDA-BE3E-4826-ACC3-3FD77FB1FF1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.iOS", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.iOS\CurvePCB.Avalonia.UI.iOS.csproj", "{44091DDA-BE3E-4826-ACC3-3FD77FB1FF1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurvePCB.Avalonia.UI.Browser", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Browser\CurvePCB.Avalonia.UI.Browser.csproj", "{6DABAEDE-73A8-404C-8B67-38CC6B75C197}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.Browser", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Browser\CurvePCB.Avalonia.UI.Browser.csproj", "{6DABAEDE-73A8-404C-8B67-38CC6B75C197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

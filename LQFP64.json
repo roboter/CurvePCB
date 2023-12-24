@@ -1,0 +1,4805 @@
+{
+  "$id": "1",
+  "$type": "NodeEditor.Mvvm.DrawingNodeViewModel, NodeEditorAvalonia.Mvvm",
+  "Nodes": [
+    {
+      "$id": "2",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 215.20000000000005,
+      "Y": 215.20000000000002,
+      "Width": 98.5,
+      "Height": 98.5,
+      "Content": {
+        "$id": "3",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RectangleViewModel, NodeEditor.Base",
+        "Label": "LQFP64"
+      },
+      "Pins": [
+        {
+          "$id": "4",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P0",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 12.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "5",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P1",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 17.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "6",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P2",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 22.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "7",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P3",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 27.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "8",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P4",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 32.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "9",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P5",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 37.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "10",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P6",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 42.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "11",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P7",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 47.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "12",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P8",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 52.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "13",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P9",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 57.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "14",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P10",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 62.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "15",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P11",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 67.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "16",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P12",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 72.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "17",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P13",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 77.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "18",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P14",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 82.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "19",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P15",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 0.0,
+          "Y": 87.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 1
+        },
+        {
+          "$id": "20",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P16",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 12.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "21",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P17",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 17.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "22",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P18",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 22.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "23",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P19",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 27.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "24",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P20",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 32.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "25",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P21",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 37.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "26",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P22",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 42.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "27",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P23",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 47.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "28",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P24",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 52.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "29",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P25",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 57.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "30",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P26",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 62.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "31",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P27",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 67.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "32",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P28",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 72.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "33",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P29",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 77.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "34",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P30",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 82.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "35",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P31",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 87.5,
+          "Y": 98.5,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 4
+        },
+        {
+          "$id": "36",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P32",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 12.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "37",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P33",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 17.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "38",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P34",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 22.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "39",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P35",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 27.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "40",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P36",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 32.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "41",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P37",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 37.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "42",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P38",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 42.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "43",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P39",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 47.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "44",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P40",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 52.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "45",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P41",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 57.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "46",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P42",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 62.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "47",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P43",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 67.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "48",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P44",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 72.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "49",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P45",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 77.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "50",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P46",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 82.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "51",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P47",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 98.5,
+          "Y": 87.5,
+          "Width": 13.5,
+          "Height": 3.5,
+          "Alignment": 2
+        },
+        {
+          "$id": "52",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P48",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 12.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "53",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P49",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 17.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "54",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P50",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 22.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "55",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P51",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 27.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "56",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P52",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 32.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "57",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P53",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 37.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "58",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P54",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 42.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "59",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P55",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 47.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "60",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P56",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 52.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "61",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P57",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 57.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "62",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P58",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 62.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "63",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P59",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 67.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "64",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P60",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 72.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "65",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P61",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 77.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "66",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P62",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 82.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        },
+        {
+          "$id": "67",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "P63",
+          "Parent": {
+            "$ref": "2"
+          },
+          "X": 87.5,
+          "Y": 0.0,
+          "Width": 3.5,
+          "Height": 13.5,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "68",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.7,
+      "Y": 63.499999999999986,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "69",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "70",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "68"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "71",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 139.7,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "72",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "73",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "71"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "74",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 88.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "75",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "76",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "74"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "77",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 114.30000000000001,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "78",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "79",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "77"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "80",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.7,
+      "Y": 165.1,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "81",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "82",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "80"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "83",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 241.29999999999995,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "84",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "85",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "83"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "86",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 190.5,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "87",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "88",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "86"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "89",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 215.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "90",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "91",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "89"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "92",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.700000000000003,
+      "Y": 266.7,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "93",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "94",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "92"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "95",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 342.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "96",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "97",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "95"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "98",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 292.09999999999997,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "99",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "100",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "98"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "101",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 317.5,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "102",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "103",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "101"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "104",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.700000000000003,
+      "Y": 368.29999999999995,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "105",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "106",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "104"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "107",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 444.4999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "108",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "109",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "107"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "110",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 393.7,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "111",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "112",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "110"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "113",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 12.70000000000001,
+      "Y": 419.1,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "114",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "115",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "113"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 2
+        }
+      ]
+    },
+    {
+      "$id": "116",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 63.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "117",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "118",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "116"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "119",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 63.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "120",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "121",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "119"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "122",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 63.50000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "123",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "124",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "122"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "125",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 63.50000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "126",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "127",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "125"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "128",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 88.9,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "129",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "130",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "128"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "131",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 88.9,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "132",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "133",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "131"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "134",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 114.30000000000001,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "135",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "136",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "134"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "137",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 114.30000000000001,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "138",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "139",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "137"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "140",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 139.70000000000002,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "141",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "142",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "140"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "143",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 139.70000000000002,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "144",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "145",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "143"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "146",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 165.10000000000002,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "147",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "148",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "146"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "149",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 165.10000000000002,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "150",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "151",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "149"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "152",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 190.50000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "153",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "154",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "152"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "155",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 190.50000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "156",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "157",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "155"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "158",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 215.90000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "159",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "160",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "158"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "161",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 215.90000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "162",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "163",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "161"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "164",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 241.3,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "165",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "166",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "164"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "167",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 241.3,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "168",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "169",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "167"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "170",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 266.70000000000005,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "171",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "172",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "170"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "173",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 266.70000000000005,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "174",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "175",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "173"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "176",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 292.1,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "177",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "178",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "176"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "179",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 292.1,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "180",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "181",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "179"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "182",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 317.5,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "183",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "184",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "182"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "185",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 317.5,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "186",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "187",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "185"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "188",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 342.90000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "189",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "190",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "188"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "191",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 342.90000000000003,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "192",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "193",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "191"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "194",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 368.3,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "195",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "196",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "194"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "197",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 368.3,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "198",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "199",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "197"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "200",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 393.70000000000005,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "201",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "202",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "200"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "203",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 393.70000000000005,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "204",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "205",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "203"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "206",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 419.1,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "207",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "208",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "206"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "209",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 419.1,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "210",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "211",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "209"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "212",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 444.5,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "213",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "214",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "212"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "215",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 444.5,
+      "Y": 495.2999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "216",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "217",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "215"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 3
+        }
+      ]
+    },
+    {
+      "$id": "218",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 88.90000000000005,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "219",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "220",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "218"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "221",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 88.90000000000005,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "222",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "223",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "221"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "224",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 114.30000000000004,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "225",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "226",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "224"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "227",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 114.30000000000004,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "228",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "229",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "227"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "230",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 139.70000000000002,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "231",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "232",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "230"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "233",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 139.70000000000002,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "234",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "235",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "233"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "236",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 165.10000000000008,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "237",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "238",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "236"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "239",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 165.10000000000008,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "240",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "241",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "239"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "242",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 190.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "243",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "244",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "242"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "245",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 190.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "246",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "247",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "245"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "248",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 215.90000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "249",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "250",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "248"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "251",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 215.90000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "252",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "253",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "251"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "254",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 241.30000000000004,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "255",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "256",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "254"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "257",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 241.30000000000004,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "258",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "259",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "257"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "260",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 266.70000000000005,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "261",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "262",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "260"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "263",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 266.70000000000005,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "264",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "265",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "263"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "266",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 292.1,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "267",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "268",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "266"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "269",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 292.1,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "270",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "271",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "269"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "272",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 317.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "273",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "274",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "272"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "275",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 317.50000000000006,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "276",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "277",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "275"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "278",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 342.90000000000003,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "279",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "280",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "278"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "281",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 342.90000000000003,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "282",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "283",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "281"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "284",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 368.3,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "285",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "286",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "284"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "287",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 368.3,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "288",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "289",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "287"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "290",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 393.7,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "291",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "292",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "290"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "293",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 393.7,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "294",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "295",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "293"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "296",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 419.09999999999997,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "297",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "298",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "296"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "299",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 419.09999999999997,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "300",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "301",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "299"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "302",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 444.49999999999994,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "303",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "304",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "302"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "305",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 444.49999999999994,
+      "Y": 12.699999999999967,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "306",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "307",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "305"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 4
+        }
+      ]
+    },
+    {
+      "$id": "308",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 63.499999999999986,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "309",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "310",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "308"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "311",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 139.7,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "312",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "313",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "311"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "314",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 88.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "315",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "316",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "314"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "317",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 114.30000000000001,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "318",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "319",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "317"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "320",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 165.1,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "321",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "322",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "320"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "323",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 241.29999999999993,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "324",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "325",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "323"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "326",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 190.5,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "327",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "328",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "326"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "329",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 215.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "330",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "331",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "329"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "332",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 266.70000000000005,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "333",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "334",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "332"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "335",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 342.9,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "336",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "337",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "335"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "338",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 292.1,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "339",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "340",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "338"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "341",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 317.5,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "342",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "343",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "341"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "344",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 368.29999999999995,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "345",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "346",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "344"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "347",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 444.4999999999999,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "348",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "349",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "347"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "350",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 393.70000000000005,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "351",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "352",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "350"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    },
+    {
+      "$id": "353",
+      "$type": "NodeEditor.Mvvm.NodeViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "X": 495.30000000000007,
+      "Y": 419.1,
+      "Width": 25.4,
+      "Height": 25.4,
+      "Content": {
+        "$id": "354",
+        "$type": "NodeEditorDemo.ViewModels.Nodes.RoundedRectangleViewModel, NodeEditor.Base",
+        "Label": "p1"
+      },
+      "Pins": [
+        {
+          "$id": "355",
+          "$type": "NodeEditor.Mvvm.PinViewModel, NodeEditorAvalonia.Mvvm",
+          "Name": "p1",
+          "Parent": {
+            "$ref": "353"
+          },
+          "X": 12.7,
+          "Y": 12.7,
+          "Width": 10.0,
+          "Height": 10.0,
+          "Alignment": 1
+        }
+      ]
+    }
+  ],
+  "Connectors": [
+    {
+      "$id": "356",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "70"
+      },
+      "End": {
+        "$ref": "4"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "357",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "76"
+      },
+      "End": {
+        "$ref": "5"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "358",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "79"
+      },
+      "End": {
+        "$ref": "6"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "359",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "73"
+      },
+      "End": {
+        "$ref": "7"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "360",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "82"
+      },
+      "End": {
+        "$ref": "8"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "361",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "88"
+      },
+      "End": {
+        "$ref": "9"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "362",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "91"
+      },
+      "End": {
+        "$ref": "10"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "363",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "85"
+      },
+      "End": {
+        "$ref": "11"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "364",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "94"
+      },
+      "End": {
+        "$ref": "12"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "365",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "100"
+      },
+      "End": {
+        "$ref": "13"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "366",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "103"
+      },
+      "End": {
+        "$ref": "14"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "367",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "97"
+      },
+      "End": {
+        "$ref": "15"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "368",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "106"
+      },
+      "End": {
+        "$ref": "16"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "369",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "112"
+      },
+      "End": {
+        "$ref": "17"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "370",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "115"
+      },
+      "End": {
+        "$ref": "18"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "371",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "109"
+      },
+      "End": {
+        "$ref": "19"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "372",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "118"
+      },
+      "End": {
+        "$ref": "52"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "373",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "127"
+      },
+      "End": {
+        "$ref": "20"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "374",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "133"
+      },
+      "End": {
+        "$ref": "21"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "375",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "139"
+      },
+      "End": {
+        "$ref": "22"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "376",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "145"
+      },
+      "End": {
+        "$ref": "23"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "377",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "151"
+      },
+      "End": {
+        "$ref": "24"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "378",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "157"
+      },
+      "End": {
+        "$ref": "25"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "379",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "163"
+      },
+      "End": {
+        "$ref": "26"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "380",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "169"
+      },
+      "End": {
+        "$ref": "27"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "381",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "175"
+      },
+      "End": {
+        "$ref": "28"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "382",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "181"
+      },
+      "End": {
+        "$ref": "29"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "383",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "30"
+      },
+      "End": {
+        "$ref": "187"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "384",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "31"
+      },
+      "End": {
+        "$ref": "193"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "385",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "32"
+      },
+      "End": {
+        "$ref": "199"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "386",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "33"
+      },
+      "End": {
+        "$ref": "205"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "387",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "34"
+      },
+      "End": {
+        "$ref": "211"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "388",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "35"
+      },
+      "End": {
+        "$ref": "217"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "389",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "223"
+      },
+      "End": {
+        "$ref": "53"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "390",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "229"
+      },
+      "End": {
+        "$ref": "54"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "391",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "55"
+      },
+      "End": {
+        "$ref": "235"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "392",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "56"
+      },
+      "End": {
+        "$ref": "241"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "393",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "57"
+      },
+      "End": {
+        "$ref": "247"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "394",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "58"
+      },
+      "End": {
+        "$ref": "253"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "395",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "59"
+      },
+      "End": {
+        "$ref": "259"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "396",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "60"
+      },
+      "End": {
+        "$ref": "265"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "397",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "61"
+      },
+      "End": {
+        "$ref": "271"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "398",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "62"
+      },
+      "End": {
+        "$ref": "277"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "399",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "63"
+      },
+      "End": {
+        "$ref": "283"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "400",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "64"
+      },
+      "End": {
+        "$ref": "289"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "401",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "65"
+      },
+      "End": {
+        "$ref": "295"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "402",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "66"
+      },
+      "End": {
+        "$ref": "301"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "403",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "67"
+      },
+      "End": {
+        "$ref": "307"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "404",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "310"
+      },
+      "End": {
+        "$ref": "36"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "405",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "316"
+      },
+      "End": {
+        "$ref": "37"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "406",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "319"
+      },
+      "End": {
+        "$ref": "38"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "407",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "313"
+      },
+      "End": {
+        "$ref": "39"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "408",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "322"
+      },
+      "End": {
+        "$ref": "40"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "409",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "328"
+      },
+      "End": {
+        "$ref": "41"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "410",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "331"
+      },
+      "End": {
+        "$ref": "42"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "411",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "325"
+      },
+      "End": {
+        "$ref": "43"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "412",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "349"
+      },
+      "End": {
+        "$ref": "51"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "413",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "50"
+      },
+      "End": {
+        "$ref": "355"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "414",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "352"
+      },
+      "End": {
+        "$ref": "49"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "415",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "48"
+      },
+      "End": {
+        "$ref": "346"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "416",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "47"
+      },
+      "End": {
+        "$ref": "337"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "417",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "46"
+      },
+      "End": {
+        "$ref": "343"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "418",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "45"
+      },
+      "End": {
+        "$ref": "340"
+      },
+      "Offset": 50.0
+    },
+    {
+      "$id": "419",
+      "$type": "NodeEditor.Mvvm.OffsetConnectorViewModel, NodeEditorAvalonia.Mvvm",
+      "Parent": {
+        "$ref": "1"
+      },
+      "Orientation": 0,
+      "Start": {
+        "$ref": "44"
+      },
+      "End": {
+        "$ref": "334"
+      },
+      "Offset": 50.0
+    }
+  ],
+  "EnableMultiplePinConnections": false,
+  "EnableSnap": true,
+  "SnapX": 25.4,
+  "SnapY": 25.4,
+  "EnableGrid": true,
+  "GridCellWidth": 25.4,
+  "GridCellHeight": 25.4,
+  "X": 0.0,
+  "Y": 0.0,
+  "Width": 900.0,
+  "Height": 600.0
+}

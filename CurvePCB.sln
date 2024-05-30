@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.iOS", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurvePCB.Avalonia.UI.Browser", "CurvePCB.Avalonia.UI\CurvePCB.Avalonia.UI.Browser\CurvePCB.Avalonia.UI.Browser.csproj", "{6DABAEDE-73A8-404C-8B67-38CC6B75C197}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathfindingWithBezier", "PathfindingWithBezier\PathfindingWithBezier.csproj", "{259A7A89-8267-443E-A5EE-B7AC22455130}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{6DABAEDE-73A8-404C-8B67-38CC6B75C197}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DABAEDE-73A8-404C-8B67-38CC6B75C197}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DABAEDE-73A8-404C-8B67-38CC6B75C197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259A7A89-8267-443E-A5EE-B7AC22455130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259A7A89-8267-443E-A5EE-B7AC22455130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259A7A89-8267-443E-A5EE-B7AC22455130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259A7A89-8267-443E-A5EE-B7AC22455130}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

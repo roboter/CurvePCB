@@ -9,7 +9,7 @@ public class PathfindingWBezier
     {
         var roughPath = AStar.FindPath(grid, start, end);
         if (roughPath.Count < 4)
-            return new List<PointF>();
+            return new List<PointF>(); // Not enough points for a Bezier curve
 
         var pointList = new List<Point>();
         foreach (var node in roughPath)

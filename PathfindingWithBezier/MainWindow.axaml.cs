@@ -3,8 +3,10 @@ using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using Brushes = Avalonia.Media.Brushes;
 using Point = Avalonia.Point;
 
@@ -15,7 +17,6 @@ public partial class MainWindow : Window
     private int[,] grid;
     private List<PointF> smoothPath;
     private const int cellSize = 40;
-
     public MainWindow()
     {
         InitializeComponent();
@@ -73,22 +74,15 @@ public partial class MainWindow : Window
         if (smoothPath != null && smoothPath.Count > 0)
         {
             var pathFigure = new PathFigure { StartPoint = new Point(smoothPath[0].X * cellSize + cellSize / 2, smoothPath[0].Y * cellSize + cellSize / 2) };
-
-            for (int i = 1; i < smoothPath.Count; i += 3)
+            var pathSegment = new PolyLineSegment
             {
-                if (i + 2 < smoothPath.Count)
-                {
-                    var bezierSegment = new BezierSegment
-                    {
-                        Point1 = new Point(smoothPath[i].X * cellSize + cellSize / 2, smoothPath[i].Y * cellSize + cellSize / 2),
-                        Point2 = new Point(smoothPath[i + 1].X * cellSize + cellSize / 2, smoothPath[i + 1].Y * cellSize + cellSize / 2),
-                        Point3 = new Point(smoothPath[i + 2].X * cellSize + cellSize / 2, smoothPath[i + 2].Y * cellSize + cellSize / 2)
-                    };
-
-                    pathFigure.Segments.Add(bezierSegment);
-                }
+                Points = new AvaloniaList<Point>()
+            };
+            foreach (var point in smoothPath)
+            {
+                pathSegment.Points.Add(new Point(point.X * cellSize + cellSize / 2, point.Y * cellSize + cellSize / 2));
             }
-
+            pathFigure.Segments.Add(pathSegment);
             var pathGeometry = new PathGeometry();
             pathGeometry.Figures.Add(pathFigure);
 
@@ -102,7 +96,7 @@ public partial class MainWindow : Window
             canvas.Children.Add(path);
         }
     }
-
 }
+
 
 

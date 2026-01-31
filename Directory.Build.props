@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <!-- Allow restoring/building projects targeting Windows only when running on Windows -->
+    <EnableWindowsTargeting Condition="'$(OS)' == 'Windows_NT'">true</EnableWindowsTargeting>
+    <!-- Pin Windows Desktop ref package to match installed SDK/workload preview build -->
+    <WindowsDesktopAppRefPackageVersion>10.0.0-preview.5.25277.114</WindowsDesktopAppRefPackageVersion>
+  </PropertyGroup>
+
+  <!-- Add Windows desktop ref only for windows-targeting projects when running on Windows -->
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT' and ('$(UseWPF)' == 'true' or '$(UseWindowsForms)' == 'true' or $([System.String]::Copy('$(TargetFramework)').Contains('-windows')) == 'true')">
+    <PackageReference Include="Microsoft.WindowsDesktop.App.Ref" Version="$(WindowsDesktopAppRefPackageVersion)" PrivateAssets="All" />
+  </ItemGroup>
+</Project>

@@ -13,8 +13,8 @@
   </Design.DataContext>
 
   <StackPanel>
-    <Button Content="{Binding ButtonText}" Command="{Binding DoTheThing}" CommandParameter="Hello World"  />
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    <Canvas x:Name="canvas" Width="400" Height="400" Background="AliceBlue" PointerPressed="PointerPressedEvent"></Canvas>
+    <!--<Button Content="{Binding ButtonText}" Command="{Binding DoTheThing}" CommandParameter="Hello World"  />
+    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Canvas x:Name="canvas" Width="400" Height="400" Background="AliceBlue" PointerPressed="PointerPressedEvent"></Canvas>-->
   </StackPanel>
 </UserControl>

@@ -16,19 +16,19 @@ public partial class MainView : UserControl
 
     public void PointerPressedEvent(object o, PointerPressedEventArgs args)
     {
-        var point = args.GetCurrentPoint(canvas);
-        var x = point.Position.X;
-        var y = point.Position.Y;
-        if (point.Properties.IsLeftButtonPressed)
-        {
-            // left button pressed
-        //    canvas.
-        }
-        if (point.Properties.IsRightButtonPressed)
-        {
-            // right button pressed
-        }
-        args.Handled = true;
+        //var point = args.GetCurrentPoint(canvas);
+        //var x = point.Position.X;
+        //var y = point.Position.Y;
+        //if (point.Properties.IsLeftButtonPressed)
+        //{
+        //    // left button pressed
+        ////    canvas.
+        //}
+        //if (point.Properties.IsRightButtonPressed)
+        //{
+        //    // right button pressed
+        //}
+        //args.Handled = true;
     }
 }
 

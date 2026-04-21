@@ -8,3 +8,9 @@
 
 ## KiCAD example
 https://mitxela.com/projects/melting_kicad
+
+
+## Buid
+```sh
+dotnet build
+```
